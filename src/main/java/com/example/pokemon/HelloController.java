@@ -1,12 +1,13 @@
 package com.example.pokemon;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
-public class HelloController {
+public class HelloController<Buttom> {
 
     Pokemon pk1=new Pokemon("Jolteon",204, 204, 65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/135.png"));
     Pokemon pk2=new Pokemon("Charizard",148, 148,45,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png"));
@@ -76,6 +77,8 @@ public class HelloController {
     Label nivel6;
     @FXML
     ImageView img6;
+    @FXML
+    Button boton1;
 
     @FXML
     public void initialize(){
@@ -114,46 +117,142 @@ public class HelloController {
         nom1.setStyle("-fx-text-fill: #0BE1F0;");
         vida1.setStyle("-fx-text-fill: #0BE1F0;");
         nivel1.setStyle("-fx-text-fill: #0BE1F0;");
+        nom2.setStyle("-fx-text-fill: #f8f7f7;");
+        vida2.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel2.setStyle("-fx-text-fill: #f8f7f7;");
+        nom3.setStyle("-fx-text-fill: #f8f7f7;");
+        vida3.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel3.setStyle("-fx-text-fill: #f8f7f7;");
+        nom4.setStyle("-fx-text-fill: #f8f7f7;");
+        vida4.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel4.setStyle("-fx-text-fill: #f8f7f7;");
+        nom5.setStyle("-fx-text-fill: #f8f7f7;");
+        vida5.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel5.setStyle("-fx-text-fill: #f8f7f7;");
+        nom6.setStyle("-fx-text-fill: #f8f7f7;");
+        vida6.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel6.setStyle("-fx-text-fill: #f8f7f7;");
     }
     @FXML
     private void click2(){
         click = true;
         System.out.println("Caja2 pulsada");
+        nom1.setStyle("-fx-text-fill: #f8f7f7;");
+        vida1.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel1.setStyle("-fx-text-fill: #f8f7f7;");
         nom2.setStyle("-fx-text-fill: #0BE1F0;");
         vida2.setStyle("-fx-text-fill: #0BE1F0;");
         nivel2.setStyle("-fx-text-fill: #0BE1F0;");
+        nom3.setStyle("-fx-text-fill: #f8f7f7;");
+        vida3.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel3.setStyle("-fx-text-fill: #f8f7f7;");
+        nom4.setStyle("-fx-text-fill: #f8f7f7;");
+        vida4.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel4.setStyle("-fx-text-fill: #f8f7f7;");
+        nom5.setStyle("-fx-text-fill: #f8f7f7;");
+        vida5.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel5.setStyle("-fx-text-fill: #f8f7f7;");
+        nom6.setStyle("-fx-text-fill: #f8f7f7;");
+        vida6.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel6.setStyle("-fx-text-fill: #f8f7f7;");
     }
     @FXML
     private void click3(){
         click = true;
         System.out.println("Caja3 pulsada");
+        nom1.setStyle("-fx-text-fill: #f8f7f7;");
+        vida1.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel1.setStyle("-fx-text-fill: #f8f7f7;");
+        nom2.setStyle("-fx-text-fill: #f8f7f7;");
+        vida2.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel2.setStyle("-fx-text-fill: #f8f7f7;");
         nom3.setStyle("-fx-text-fill: #0BE1F0;");
         vida3.setStyle("-fx-text-fill: #0BE1F0;");
         nivel3.setStyle("-fx-text-fill: #0BE1F0;");
+        nom4.setStyle("-fx-text-fill: #f8f7f7;");
+        vida4.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel4.setStyle("-fx-text-fill: #f8f7f7;");
+        nom5.setStyle("-fx-text-fill: #f8f7f7;");
+        vida5.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel5.setStyle("-fx-text-fill: #f8f7f7;");
+        nom6.setStyle("-fx-text-fill: #f8f7f7;");
+        vida6.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel6.setStyle("-fx-text-fill: #f8f7f7;");
     }
     @FXML
     private void click4(){
         click = true;
         System.out.println("Caja4 pulsada");
+        nom1.setStyle("-fx-text-fill: #f8f7f7;");
+        vida1.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel1.setStyle("-fx-text-fill: #f8f7f7;");
+        nom2.setStyle("-fx-text-fill: #f8f7f7;");
+        vida2.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel2.setStyle("-fx-text-fill: #f8f7f7;");
+        nom3.setStyle("-fx-text-fill: #f8f7f7;");
+        vida3.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel3.setStyle("-fx-text-fill: #f8f7f7;");
         nom4.setStyle("-fx-text-fill: #0BE1F0;");
         vida4.setStyle("-fx-text-fill: #0BE1F0;");
         nivel4.setStyle("-fx-text-fill: #0BE1F0;");
+        nom5.setStyle("-fx-text-fill: #f8f7f7;");
+        vida5.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel5.setStyle("-fx-text-fill: #f8f7f7;");
+        nom6.setStyle("-fx-text-fill: #f8f7f7;");
+        vida6.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel6.setStyle("-fx-text-fill: #f8f7f7;");
     }
     @FXML
     private void click5(){
         click = true;
         System.out.println("Caja5 pulsada");
+        nom1.setStyle("-fx-text-fill: #f8f7f7;");
+        vida1.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel1.setStyle("-fx-text-fill: #f8f7f7;");
+        nom2.setStyle("-fx-text-fill: #f8f7f7;");
+        vida2.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel2.setStyle("-fx-text-fill: #f8f7f7;");
+        nom3.setStyle("-fx-text-fill: #f8f7f7;");
+        vida3.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel3.setStyle("-fx-text-fill: #f8f7f7;");
+        nom4.setStyle("-fx-text-fill: #f8f7f7;");
+        vida4.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel4.setStyle("-fx-text-fill: #f8f7f7;");
         nom5.setStyle("-fx-text-fill: #0BE1F0;");
         vida5.setStyle("-fx-text-fill: #0BE1F0;");
         nivel5.setStyle("-fx-text-fill: #0BE1F0;");
+        nom6.setStyle("-fx-text-fill: #f8f7f7;");
+        vida6.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel6.setStyle("-fx-text-fill: #f8f7f7;");
     }
     @FXML
     private void click6(){
         click = true;
         System.out.println("Caja6 pulsada");
+        nom1.setStyle("-fx-text-fill: #f8f7f7;");
+        vida1.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel1.setStyle("-fx-text-fill: #f8f7f7;");
+        nom2.setStyle("-fx-text-fill: #f8f7f7;");
+        vida2.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel2.setStyle("-fx-text-fill: #f8f7f7;");
+        nom3.setStyle("-fx-text-fill: #f8f7f7;");
+        vida3.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel3.setStyle("-fx-text-fill: #f8f7f7;");
+        nom4.setStyle("-fx-text-fill: #f8f7f7;");
+        vida4.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel4.setStyle("-fx-text-fill: #f8f7f7;");
+        nom5.setStyle("-fx-text-fill: #f8f7f7;");
+        vida5.setStyle("-fx-text-fill: #f8f7f7;");
+        nivel5.setStyle("-fx-text-fill: #f8f7f7;");
         nom6.setStyle("-fx-text-fill: #0BE1F0;");
         vida6.setStyle("-fx-text-fill: #0BE1F0;");
         nivel6.setStyle("-fx-text-fill: #0BE1F0;");
+    }
+    @FXML
+    private void clickboton(){
+        if (click == true){
+
+        }
     }
 
 }
