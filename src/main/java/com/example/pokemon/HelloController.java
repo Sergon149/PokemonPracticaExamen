@@ -7,7 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
-public class HelloController<Buttom> {
+public class HelloController {
 
     Pokemon pk1=new Pokemon("Jolteon",204, 204, 65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/135.png"));
     Pokemon pk2=new Pokemon("Charizard",148, 148,45,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png"));
@@ -248,6 +248,7 @@ public class HelloController<Buttom> {
         vida6.setStyle("-fx-text-fill: #0BE1F0;");
         nivel6.setStyle("-fx-text-fill: #0BE1F0;");
     }
+
     @FXML
     private void clickboton(){
         if (click == true){
