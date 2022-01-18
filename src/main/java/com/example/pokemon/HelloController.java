@@ -1,11 +1,18 @@
 package com.example.pokemon;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class HelloController {
 
@@ -80,6 +87,9 @@ public class HelloController {
     @FXML
     Button boton1;
 
+    private Ventana2Controller controllerVentana2 = null;
+    private Stage stage = null;
+
     @FXML
     public void initialize(){
         nom1.setText(pk1.nombre);
@@ -106,6 +116,7 @@ public class HelloController {
         vida6.setText(pk6.vidaActual+"/"+ pk6.vidaTotal);
         nivel6.setText("NV "+pk6.nivel);
         img6.setImage(pk6.imagen);
+
     }
 
 
@@ -251,12 +262,32 @@ public class HelloController {
 
     @FXML
     private void clickboton(){
-        if (click == true){
 
-        }
     }
 
-}
+    @FXML
+    protected void onHelloButtonClick() {
+        try {
+            Stage stage2 = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Ventana2.fxml"));
+
+            BorderPane root =  loader.load();
+            Scene scene = new Scene(root, 720, 400);
+
+            stage2.setScene(scene);
+            stage2.show();
+
+            Ventana2Controller v = loader.getController();
+            v.initialize();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    }
+
 class Pokemon{
     String nombre=" ";
     float vidaActual=0;
