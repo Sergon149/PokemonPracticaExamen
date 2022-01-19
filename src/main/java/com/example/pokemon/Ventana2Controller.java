@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
 
@@ -28,6 +29,8 @@ public class Ventana2Controller {
     Label nombremalo;
     @FXML
     Label nivelmalo;
+    @FXML
+    ImageView fotomalo;
 
 
 
@@ -46,6 +49,7 @@ public class Ventana2Controller {
 
         nombremalo.setText(pkmalos.get(elecc).getNombre());
         nivelmalo.setText(String.valueOf(pkmalos.get(elecc).getNivel()));
+        fotomalo.setImage(pkmalos.get(elecc).getImagen());
     }
 
 

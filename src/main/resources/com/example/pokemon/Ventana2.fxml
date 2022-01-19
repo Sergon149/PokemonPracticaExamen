@@ -8,7 +8,7 @@
    <center>
       <AnchorPane fx:id="anchor1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url('https://static.wikia.nocookie.net/espokemon/images/e/e4/Campo_de_batalla_DPPt_2.png/revision/latest?cb=20090424143324'); -fx-background-size: 100% 100%;" BorderPane.alignment="CENTER">
          <children>
-            <Pane fx:id="cajamalo" layoutX="51.0" layoutY="37.0" prefHeight="61.0" prefWidth="200.0" style="-fx-border-width: 3; -fx-border-color: #000000; -fx-border-radius: 8; -fx-background-color: #44DBD6; -fx-background-radius: 8;">
+            <Pane fx:id="cajamalo" layoutX="100.0" layoutY="37.0" prefHeight="61.0" prefWidth="200.0" style="-fx-border-width: 3; -fx-border-color: #000000; -fx-border-radius: 8; -fx-background-color: #44DBD6; -fx-background-radius: 8;">
                <children>
                   <Label fx:id="nombremalo" layoutX="14.0" layoutY="6.0" text="NombreMalo" />
                   <ImageView fx:id="generomalo" fitHeight="22.0" fitWidth="22.0" layoutX="100.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
@@ -17,7 +17,7 @@
                   <ProgressBar fx:id="barramalo" layoutX="37.0" layoutY="34.0" prefHeight="18.0" prefWidth="149.0" progress="1.0" style="-fx-accent: #94ED30;" />
                </children>
             </Pane>
-            <Pane fx:id="cajamalo1" layoutX="386.0" layoutY="212.0" prefHeight="61.0" prefWidth="200.0" style="-fx-border-width: 3; -fx-border-color: #000000; -fx-border-radius: 8; -fx-background-color: #44DBD6; -fx-background-radius: 8;">
+            <Pane fx:id="cajamalo1" layoutX="418.0" layoutY="212.0" prefHeight="61.0" prefWidth="200.0" style="-fx-border-width: 3; -fx-border-color: #000000; -fx-border-radius: 8; -fx-background-color: #44DBD6; -fx-background-radius: 8;">
                <children>
                   <Label fx:id="nombrebueno" layoutX="14.0" layoutY="6.0" text="NombreBueno" />
                   <ImageView fx:id="generobueno" fitHeight="22.0" fitWidth="22.0" layoutX="100.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
@@ -26,6 +26,7 @@
                   <ProgressBar fx:id="barrabueno" layoutX="37.0" layoutY="34.0" prefHeight="18.0" prefWidth="149.0" progress="1.0" style="-fx-accent: #94ED30;" />
                </children>
             </Pane>
+            <ImageView fx:id="fotomalo" fitHeight="150.0" fitWidth="200.0" layoutX="357.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
          </children></AnchorPane>
    </center>
    <bottom>
