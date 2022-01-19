@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Random;
 
 public class HelloController {
 
@@ -303,5 +304,17 @@ class Pokemon{
         this.vidaTotal = vidaTotal;
         this.nivel = nivel;
         this.imagen = imagen;
+    }
+
+    public void ataque2(){
+        int segundo = (int) (Math.random()*25+10);
+    }
+
+    public void ataque3(){
+        int tercero = (int) (Math.random()*50);
+    }
+
+    public void cura(){
+        int curisima = (int) (Math.random()*75+25);
     }
 }
