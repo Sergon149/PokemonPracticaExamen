@@ -269,7 +269,7 @@ public class HelloController {
     protected void onHelloButtonClick() {
         try {
             Stage stage2 = new Stage();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Ventana2.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Ventana2.fxml"));
 
             BorderPane root =  loader.load();
             Scene scene = new Scene(root, 720, 400);
