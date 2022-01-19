@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
@@ -7,11 +8,35 @@
    <center>
       <AnchorPane fx:id="anchor1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url('https://static.wikia.nocookie.net/espokemon/images/e/e4/Campo_de_batalla_DPPt_2.png/revision/latest?cb=20090424143324'); -fx-background-size: 100% 100%;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="353.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" />
+            <Pane fx:id="cajamalo" layoutX="51.0" layoutY="37.0" prefHeight="61.0" prefWidth="200.0" style="-fx-border-width: 3; -fx-border-color: #000000; -fx-border-radius: 8; -fx-background-color: #44DBD6; -fx-background-radius: 8;">
+               <children>
+                  <Label fx:id="nombremalo" layoutX="14.0" layoutY="6.0" text="NombreMalo" />
+                  <ImageView fx:id="generomalo" fitHeight="22.0" fitWidth="22.0" layoutX="100.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="nivelmalo" layoutX="144.0" layoutY="6.0" text="NvMalo" />
+                  <Label layoutX="21.0" layoutY="34.0" text="PS" />
+                  <ProgressBar fx:id="barramalo" layoutX="37.0" layoutY="34.0" prefHeight="18.0" prefWidth="149.0" progress="1.0" style="-fx-accent: #94ED30;" />
+               </children>
+            </Pane>
+            <Pane fx:id="cajamalo1" layoutX="386.0" layoutY="212.0" prefHeight="61.0" prefWidth="200.0" style="-fx-border-width: 3; -fx-border-color: #000000; -fx-border-radius: 8; -fx-background-color: #44DBD6; -fx-background-radius: 8;">
+               <children>
+                  <Label fx:id="nombrebueno" layoutX="14.0" layoutY="6.0" text="NombreBueno" />
+                  <ImageView fx:id="generobueno" fitHeight="22.0" fitWidth="22.0" layoutX="100.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="nivelbueno" layoutX="144.0" layoutY="6.0" text="NvBueno" />
+                  <Label layoutX="21.0" layoutY="34.0" text="PS" />
+                  <ProgressBar fx:id="barrabueno" layoutX="37.0" layoutY="34.0" prefHeight="18.0" prefWidth="149.0" progress="1.0" style="-fx-accent: #94ED30;" />
+               </children>
+            </Pane>
          </children></AnchorPane>
    </center>
    <bottom>
-      <AnchorPane prefHeight="113.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="113.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="atacar" layoutX="14.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#botonataque" prefHeight="30.0" prefWidth="81.0" text="ATACAR" />
+            <Button fx:id="curar" layoutX="125.0" layoutY="42.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="81.0" text="CURARME" />
+            <Button fx:id="ataque1" layoutX="300.0" layoutY="14.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="81.0" text="SEGURO" />
+            <Button fx:id="ataque2" layoutX="300.0" layoutY="72.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="89.0" text="ARRIESGADO" />
+            <Button fx:id="ataque3" layoutX="425.0" layoutY="14.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="117.0" text="MUY ARRIESGADO" />
+            <Button fx:id="cancelar" layoutX="425.0" layoutY="72.0" mnemonicParsing="false" onMouseClicked="#botoncancelar" prefHeight="30.0" prefWidth="81.0" text="CANCELAR" />
+         </children></AnchorPane>
    </bottom>
 </BorderPane>

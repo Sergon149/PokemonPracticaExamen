@@ -274,8 +274,10 @@ public class HelloController {
             BorderPane root =  loader.load();
             Scene scene = new Scene(root, 720, 400);
 
+            stage2.setTitle("PELEA");
             stage2.setScene(scene);
             stage2.show();
+            stage2.setResizable(false);
 
             Ventana2Controller v = loader.getController();
             v.initialize();
