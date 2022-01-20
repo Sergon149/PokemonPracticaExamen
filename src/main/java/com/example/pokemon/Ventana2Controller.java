@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Ventana2Controller {
 
@@ -31,8 +32,12 @@ public class Ventana2Controller {
     Label nivelmalo;
     @FXML
     ImageView fotomalo;
+    @FXML
+    Label psmalo;
+    @FXML
+    Label psbueno;
 
-
+    int elecc = (int) (Math.random()*4);
 
     public void initialize() {
         ataque1.setVisible(false);
@@ -40,18 +45,22 @@ public class Ventana2Controller {
         ataque3.setVisible(false);
         cancelar.setVisible(false);
 
-        pkmalos.add( new PokemonMalo ("Jolteon",204, 204, 65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/135.png")));
-        pkmalos.add( new PokemonMalo ("Charizard",148, 148,45,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png")));
-        pkmalos.add( new PokemonMalo ("Vaporeon",234, 234,54,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/134.png")));
-        pkmalos.add( new PokemonMalo ("Blastoide",222, 222,65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png")));
+        pkmalos.add( new PokemonMalo ("Jolteon",100, 100, 65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/135.png")));
+        pkmalos.add( new PokemonMalo ("Charizard",100, 100,45,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png")));
+        pkmalos.add( new PokemonMalo ("Vaporeon",100, 100,54,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/134.png")));
+        pkmalos.add( new PokemonMalo ("Blastoide",100, 100,65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png")));
 
-        int elecc = (int) (Math.random()*4);
 
-        nombremalo.setText(pkmalos.get(elecc).getNombre());
-        nivelmalo.setText(String.valueOf(pkmalos.get(elecc).getNivel()));
+
+        nombremalo.setText(pkmalos.get(elecc).getNombre().toUpperCase());
+        nivelmalo.setText("Nv "+pkmalos.get(elecc).getNivel());
         fotomalo.setImage(pkmalos.get(elecc).getImagen());
     }
 
+    @FXML
+    public void pasarpk(Pokemon pokemon){
+
+    }
 
     @FXML
     private void botonataque(){
@@ -74,12 +83,42 @@ public class Ventana2Controller {
         ataque3.setVisible(false);
         cancelar.setVisible(false);
     }
+
+    @FXML
+    private void ataqueseguro(){
+
+    }
+    @FXML
+    private void ataquearriesgado(){
+
+    }
+    @FXML
+    private void ataquemuyarriesgado(){
+
+    }
+
+    @FXML
+    private void psentramalo(){
+        psmalo.setText(""+pkmalos.get(elecc).getVidaActual());
+    }
+    @FXML
+    private void pssalemalo(){
+        psmalo.setText("PS");
+    }
+    @FXML
+    private void psentrabueno(){
+
+    }
+    @FXML
+    private void pssalebueno(){
+        psbueno.setText("PS");
+    }
 }
 class PokemonMalo {
-    String nombre = " ";
-    float vidaActual = 0;
-    float vidaTotal = 0;
-    int nivel = 0;
+    String nombre;
+    float vidaActual;
+    float vidaTotal;
+    int nivel;
     Image imagen;
 
     public PokemonMalo(String nombre, float vidaActual, float vidaTotal, int nivel, Image imagen) {
@@ -88,6 +127,18 @@ class PokemonMalo {
         this.vidaTotal = vidaTotal;
         this.nivel = nivel;
         this.imagen = imagen;
+    }
+
+    public void ataque2(){
+        int segundo = (int) (Math.random()*25+10);
+    }
+
+    public void ataque3(){
+        int tercero = (int) (Math.random()*50);
+    }
+
+    public void cura(){
+        int curisima = (int) (Math.random()*75+25);
     }
 
 

@@ -24,7 +24,9 @@ public class HelloController {
     Pokemon pk5=new Pokemon("Mewtwo",298, 298,75,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/150.png"));
     Pokemon pk6=new Pokemon("Butterfree",160, 160,54,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/012.png"));
 
-    boolean click = false;
+
+    int num;
+
     @FXML
     AnchorPane caja1;
     @FXML
@@ -88,8 +90,7 @@ public class HelloController {
     @FXML
     Button boton1;
 
-    private Ventana2Controller controllerVentana2 = null;
-    private Stage stage = null;
+    Pokemon selec = null;
 
     @FXML
     public void initialize(){
@@ -124,7 +125,9 @@ public class HelloController {
 
     @FXML
     private void click1(){
-        click = true;
+        clickboton();
+        selec=pk1;
+        num=1;
         System.out.println("Caja1 pulsada");
         nom1.setStyle("-fx-text-fill: #0BE1F0;");
         vida1.setStyle("-fx-text-fill: #0BE1F0;");
@@ -147,7 +150,9 @@ public class HelloController {
     }
     @FXML
     private void click2(){
-        click = true;
+        clickboton();
+        num=2;
+        selec=pk2;
         System.out.println("Caja2 pulsada");
         nom1.setStyle("-fx-text-fill: #f8f7f7;");
         vida1.setStyle("-fx-text-fill: #f8f7f7;");
@@ -170,7 +175,9 @@ public class HelloController {
     }
     @FXML
     private void click3(){
-        click = true;
+        clickboton();
+        num=3;
+        selec=pk3;
         System.out.println("Caja3 pulsada");
         nom1.setStyle("-fx-text-fill: #f8f7f7;");
         vida1.setStyle("-fx-text-fill: #f8f7f7;");
@@ -193,7 +200,9 @@ public class HelloController {
     }
     @FXML
     private void click4(){
-        click = true;
+        clickboton();
+        num=4;
+        selec=pk4;
         System.out.println("Caja4 pulsada");
         nom1.setStyle("-fx-text-fill: #f8f7f7;");
         vida1.setStyle("-fx-text-fill: #f8f7f7;");
@@ -216,7 +225,9 @@ public class HelloController {
     }
     @FXML
     private void click5(){
-        click = true;
+        clickboton();
+        num=5;
+        selec=pk5;
         System.out.println("Caja5 pulsada");
         nom1.setStyle("-fx-text-fill: #f8f7f7;");
         vida1.setStyle("-fx-text-fill: #f8f7f7;");
@@ -239,7 +250,9 @@ public class HelloController {
     }
     @FXML
     private void click6(){
-        click = true;
+        clickboton();
+        num=6;
+        selec=pk6;
         System.out.println("Caja6 pulsada");
         nom1.setStyle("-fx-text-fill: #f8f7f7;");
         vida1.setStyle("-fx-text-fill: #f8f7f7;");
@@ -262,7 +275,8 @@ public class HelloController {
     }
 
     @FXML
-    private void clickboton(){
+    public void clickboton(){
+            boton1.setVisible(true);
 
     }
 
@@ -282,6 +296,7 @@ public class HelloController {
 
             Ventana2Controller v = loader.getController();
             v.initialize();
+            v.pasarpk(selec);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -304,17 +319,5 @@ class Pokemon{
         this.vidaTotal = vidaTotal;
         this.nivel = nivel;
         this.imagen = imagen;
-    }
-
-    public void ataque2(){
-        int segundo = (int) (Math.random()*25+10);
-    }
-
-    public void ataque3(){
-        int tercero = (int) (Math.random()*50);
-    }
-
-    public void cura(){
-        int curisima = (int) (Math.random()*75+25);
     }
 }
