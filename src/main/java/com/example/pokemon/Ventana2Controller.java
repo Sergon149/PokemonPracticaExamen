@@ -59,7 +59,7 @@ public class Ventana2Controller {
 
     @FXML
     public void pasarpk(Pokemon pokemon){
-
+        nombremalo.setText("Hola");
     }
 
     @FXML
