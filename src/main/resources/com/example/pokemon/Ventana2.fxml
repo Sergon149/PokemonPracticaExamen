@@ -9,7 +9,7 @@
    <center>
       <AnchorPane fx:id="anchor1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url('https://static.wikia.nocookie.net/espokemon/images/e/e4/Campo_de_batalla_DPPt_2.png/revision/latest?cb=20090424143324'); -fx-background-size: 100% 100%;" BorderPane.alignment="CENTER">
          <children>
-            <Pane fx:id="cajamalo" layoutX="147.0" layoutY="37.0" prefHeight="61.0" prefWidth="206.0" style="-fx-border-width: 3; -fx-border-color: #000000; -fx-border-radius: 8; -fx-background-color: #44DBD6; -fx-background-radius: 8;">
+            <Pane fx:id="cajamalo" layoutX="208.0" layoutY="37.0" prefHeight="61.0" prefWidth="206.0" style="-fx-border-width: 3; -fx-border-color: #000000; -fx-border-radius: 8; -fx-background-color: #44DBD6; -fx-background-radius: 8;">
                <children>
                   <Label fx:id="nombremalo" layoutX="14.0" layoutY="6.0" text="NombreMalo" />
                   <Label fx:id="nivelmalo" layoutX="144.0" layoutY="6.0" text="NvMalo" />
@@ -28,7 +28,8 @@
                   <ProgressBar fx:id="barrabueno" layoutX="53.0" layoutY="35.0" prefHeight="18.0" prefWidth="149.0" progress="1.0" style="-fx-accent: #94ED30;" />
                </children>
             </Pane>
-            <ImageView fx:id="fotomalo" fitHeight="150.0" fitWidth="200.0" layoutX="481.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="fotomalo" fitHeight="150.0" fitWidth="200.0" layoutX="450.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="fotobueno" fitHeight="179.0" fitWidth="210.0" layoutX="85.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true" />
          </children></AnchorPane>
    </center>
    <bottom>

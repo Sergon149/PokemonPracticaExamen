@@ -3,15 +3,15 @@ package com.example.pokemon;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class Ventana2Controller {
 
-    ArrayList <PokemonMalo> pkmalos = new ArrayList <PokemonMalo>();
+    ArrayList <PokemonMalo> pkmalos = new ArrayList<>();
 
 
     @FXML
@@ -29,13 +29,24 @@ public class Ventana2Controller {
     @FXML
     Label nombremalo;
     @FXML
+    Label nombrebueno;
+    @FXML
     Label nivelmalo;
     @FXML
+    Label nivelbueno;
+    @FXML
     ImageView fotomalo;
+    @FXML
+    ImageView fotobueno;
     @FXML
     Label psmalo;
     @FXML
     Label psbueno;
+    @FXML
+    ProgressBar barramalo;
+    @FXML
+    ProgressBar barrabueno;
+
 
     int elecc = (int) (Math.random()*4);
 
@@ -45,10 +56,10 @@ public class Ventana2Controller {
         ataque3.setVisible(false);
         cancelar.setVisible(false);
 
-        pkmalos.add( new PokemonMalo ("Jolteon",100, 100, 65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/135.png")));
-        pkmalos.add( new PokemonMalo ("Charizard",100, 100,45,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png")));
-        pkmalos.add( new PokemonMalo ("Vaporeon",100, 100,54,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/134.png")));
-        pkmalos.add( new PokemonMalo ("Blastoide",100, 100,65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png")));
+        pkmalos.add( new PokemonMalo ("Rayquaza",100, 100, 30,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/7/78/latest/20140111185443/Rayquaza_XY.gif")));
+        pkmalos.add( new PokemonMalo ("Pikachu",100, 100,95,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/7/74/latest/20200104060734/Pikachu_EpEc.gif/111px-Pikachu_EpEc.gif")));
+        pkmalos.add( new PokemonMalo ("Tyranitar",100, 100,45,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/5/5d/latest/20200105034804/Tyranitar_EpEc.gif/88px-Tyranitar_EpEc.gif")));
+        pkmalos.add( new PokemonMalo ("Mr. Mine",100, 100,60,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/3/39/latest/20200104030503/Mr._Mime_EpEc.gif/120px-Mr._Mime_EpEc.gif")));
 
 
 
@@ -59,7 +70,11 @@ public class Ventana2Controller {
 
     @FXML
     public void pasarpk(Pokemon pokemon){
-        nombremalo.setText("Hola");
+        nombrebueno.setText(pokemon.nombre.toUpperCase());
+        nivelbueno.setText("Nv "+pokemon.nivel);
+        fotobueno.setImage(pokemon.imagen);
+        psbueno.setText(String.valueOf(pokemon.vidaActual));
+
     }
 
     @FXML
@@ -102,13 +117,9 @@ public class Ventana2Controller {
         psmalo.setText(""+pkmalos.get(elecc).getVidaActual());
     }
     @FXML
-    private void pssalemalo(){
-        psmalo.setText("PS");
-    }
+    public void pssalemalo(){psmalo.setText("PS");}
     @FXML
-    private void psentrabueno(){
-
-    }
+    private void psentrabueno(){}
     @FXML
     private void pssalebueno(){
         psbueno.setText("PS");

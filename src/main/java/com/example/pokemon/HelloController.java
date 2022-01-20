@@ -118,10 +118,7 @@ public class HelloController {
         vida6.setText(pk6.vidaActual+"/"+ pk6.vidaTotal);
         nivel6.setText("NV "+pk6.nivel);
         img6.setImage(pk6.imagen);
-
     }
-
-
 
     @FXML
     private void click1(){
@@ -275,10 +272,7 @@ public class HelloController {
     }
 
     @FXML
-    public void clickboton(){
-            boton1.setVisible(true);
-
-    }
+    public void clickboton(){boton1.setVisible(true);}
 
     @FXML
     protected void onHelloButtonClick() {
