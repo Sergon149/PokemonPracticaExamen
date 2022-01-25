@@ -1,6 +1,5 @@
 package com.example.pokemon;
 
-import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 
 public class Pokemon {
@@ -58,9 +57,12 @@ public class Pokemon {
         this.nivel = nivel;
         this.imagen = imagen;
     }
+    public void curasegura(Pokemon pokemon){
+        pokemon.setVidaActual((int) (pokemon.vidaActual+(Math.random()*75+25)));
+    }
 
     public void ataquearriesgado(Pokemon pokemon){
-        pokemon.setVidaActual((int) (pokemon.vidaActual-(Math.random()*25+15)));
+        pokemon.setVidaActual((int) (pokemon.vidaActual-(Math.random()*25+10)));
     }
     public void ataquemuyarriesgado(Pokemon pokemon){
         int dano= (int) (Math.random()*50);

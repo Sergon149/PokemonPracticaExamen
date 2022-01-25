@@ -64,7 +64,6 @@ public class Ventana2Controller {
         nombremalo.setText(malo.getNombre().toUpperCase());
         nivelmalo.setText("Nv "+malo.getNivel());
         fotomalo.setImage(malo.getImagen());
-        psmalo.setText(""+malo.getVidaActual());
 
     }
 
@@ -73,8 +72,6 @@ public class Ventana2Controller {
         ataque2.setVisible(false);
         ataque3.setVisible(false);
         cancelar.setVisible(false);
-
-
 
     }
 
@@ -99,6 +96,21 @@ public class Ventana2Controller {
         ataque2.setVisible(false);
         ataque3.setVisible(false);
         cancelar.setVisible(false);
+    }
+
+    @FXML
+    private void curarse(){
+        if (pokemon.vidamin(malo)){
+            malo.curasegura(pokemon);
+            malo.vidamin(pokemon);
+            actualizarbarra(pokemon,barrabueno);
+        }
+
+        if (malo.vidamin(pokemon)){
+            pokemon.curasegura(malo);
+            pokemon.vidamin(malo);
+            actualizarbarra(malo,barramalo);
+        }
     }
 
     @FXML

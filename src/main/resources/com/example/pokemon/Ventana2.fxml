@@ -36,7 +36,7 @@
       <AnchorPane prefHeight="113.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="atacar" layoutX="32.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#botonataque" prefHeight="30.0" prefWidth="81.0" text="ATACAR" />
-            <Button fx:id="curar" layoutX="150.0" layoutY="42.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="81.0" text="CURARME" />
+            <Button fx:id="curar" layoutX="150.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#curarse" prefHeight="30.0" prefWidth="81.0" text="CURARME" />
             <Button fx:id="ataque1" layoutX="345.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#ataqueseguro" prefHeight="30.0" prefWidth="81.0" text="SEGURO" />
             <Button fx:id="ataque2" layoutX="345.0" layoutY="72.0" mnemonicParsing="false" onMouseClicked="#ataquearriesgado" prefHeight="30.0" prefWidth="89.0" text="ARRIESGADO" />
             <Button fx:id="ataque3" layoutX="483.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#ataquemuyarriesgado" prefHeight="30.0" prefWidth="117.0" text="MUY ARRIESGADO" />
