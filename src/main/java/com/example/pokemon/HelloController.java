@@ -13,16 +13,21 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class HelloController {
 
-    Pokemon pk1=new Pokemon("Jolteon",204, 204, 65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/135.png"));
-    Pokemon pk2=new Pokemon("Charizard",148, 148,45,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png"));
-    Pokemon pk3=new Pokemon("Vaporeon",234, 234,54,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/134.png"));
-    Pokemon pk4=new Pokemon("Blastoide",222, 222,65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"));
-    Pokemon pk5=new Pokemon("Mewtwo",298, 298,75,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/150.png"));
-    Pokemon pk6=new Pokemon("Butterfree",160, 160,54,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/012.png"));
+    Pokemon pk1=new Pokemon("Jolteon",200, 200, 65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/135.png"));
+    Pokemon pk2=new Pokemon("Charizard",200, 200,45,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png"));
+    Pokemon pk3=new Pokemon("Vaporeon",200, 200,54,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/134.png"));
+    Pokemon pk4=new Pokemon("Blastoide",200, 200,65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"));
+    Pokemon pk5=new Pokemon("Mewtwo",200, 200,75,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/150.png"));
+    Pokemon pk6=new Pokemon("Butterfree",200, 200,54,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/012.png"));
+
+    ArrayList<Pokemon> pkmalos = new ArrayList<>();
+
+
 
 
     int num;
@@ -118,6 +123,12 @@ public class HelloController {
         vida6.setText(pk6.vidaActual+"/"+ pk6.vidaTotal);
         nivel6.setText("NV "+pk6.nivel);
         img6.setImage(pk6.imagen);
+
+        pkmalos.add( new Pokemon ("Rayquaza",100, 100, 30,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/7/78/latest/20140111185443/Rayquaza_XY.gif")));
+        pkmalos.add( new Pokemon ("Pikachu",100, 100,95,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/7/74/latest/20200104060734/Pikachu_EpEc.gif/111px-Pikachu_EpEc.gif")));
+        pkmalos.add( new Pokemon ("Tyranitar",100, 100,45,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/5/5d/latest/20200105034804/Tyranitar_EpEc.gif/88px-Tyranitar_EpEc.gif")));
+        pkmalos.add( new Pokemon ("Mr. Mine",100, 100,60,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/3/39/latest/20200104030503/Mr._Mime_EpEc.gif/120px-Mr._Mime_EpEc.gif")));
+
     }
 
     @FXML
@@ -276,6 +287,8 @@ public class HelloController {
 
     @FXML
     protected void onHelloButtonClick() {
+        int elecc = (int) (Math.random()*pkmalos.size());
+        Pokemon malo = pkmalos.get(elecc);
         try {
             Stage stage2 = new Stage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Ventana2.fxml"));
@@ -290,7 +303,7 @@ public class HelloController {
 
             Ventana2Controller v = loader.getController();
             v.initialize();
-            v.pasarpk(selec);
+            v.pasarpk(selec,malo);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -299,19 +312,3 @@ public class HelloController {
     }
 
     }
-
-class Pokemon{
-    String nombre=" ";
-    float vidaActual=0;
-    float vidaTotal=0;
-    int nivel=0;
-    Image imagen;
-
-    public Pokemon(String nombre, float vidaActual, float vidaTotal, int nivel, Image imagen) {
-        this.nombre = nombre;
-        this.vidaActual = vidaActual;
-        this.vidaTotal = vidaTotal;
-        this.nivel = nivel;
-        this.imagen = imagen;
-    }
-}

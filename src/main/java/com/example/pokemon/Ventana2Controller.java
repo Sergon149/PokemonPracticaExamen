@@ -7,11 +7,10 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.net.PortUnreachableException;
 import java.util.ArrayList;
 
 public class Ventana2Controller {
-
-    ArrayList <PokemonMalo> pkmalos = new ArrayList<>();
 
 
     @FXML
@@ -48,7 +47,26 @@ public class Ventana2Controller {
     ProgressBar barrabueno;
 
 
-    int elecc = (int) (Math.random()*4);
+    Pokemon pokemon=null;
+    Pokemon malo=null;
+
+
+    @FXML
+    public void pasarpk(Pokemon pokemon, Pokemon malo){
+
+        this.pokemon=pokemon;
+        this.malo=malo;
+
+        nombrebueno.setText(pokemon.nombre.toUpperCase());
+        nivelbueno.setText("Nv "+pokemon.nivel);
+        fotobueno.setImage(pokemon.imagen);
+
+        nombremalo.setText(malo.getNombre().toUpperCase());
+        nivelmalo.setText("Nv "+malo.getNivel());
+        fotomalo.setImage(malo.getImagen());
+        psmalo.setText(""+malo.getVidaActual());
+
+    }
 
     public void initialize() {
         ataque1.setVisible(false);
@@ -56,26 +74,10 @@ public class Ventana2Controller {
         ataque3.setVisible(false);
         cancelar.setVisible(false);
 
-        pkmalos.add( new PokemonMalo ("Rayquaza",100, 100, 30,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/7/78/latest/20140111185443/Rayquaza_XY.gif")));
-        pkmalos.add( new PokemonMalo ("Pikachu",100, 100,95,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/7/74/latest/20200104060734/Pikachu_EpEc.gif/111px-Pikachu_EpEc.gif")));
-        pkmalos.add( new PokemonMalo ("Tyranitar",100, 100,45,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/5/5d/latest/20200105034804/Tyranitar_EpEc.gif/88px-Tyranitar_EpEc.gif")));
-        pkmalos.add( new PokemonMalo ("Mr. Mine",100, 100,60,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/3/39/latest/20200104030503/Mr._Mime_EpEc.gif/120px-Mr._Mime_EpEc.gif")));
 
 
-
-        nombremalo.setText(pkmalos.get(elecc).getNombre().toUpperCase());
-        nivelmalo.setText("Nv "+pkmalos.get(elecc).getNivel());
-        fotomalo.setImage(pkmalos.get(elecc).getImagen());
     }
 
-    @FXML
-    public void pasarpk(Pokemon pokemon){
-        nombrebueno.setText(pokemon.nombre.toUpperCase());
-        nivelbueno.setText("Nv "+pokemon.nivel);
-        fotobueno.setImage(pokemon.imagen);
-        psbueno.setText(String.valueOf(pokemon.vidaActual));
-
-    }
 
     @FXML
     private void botonataque(){
@@ -102,96 +104,65 @@ public class Ventana2Controller {
     @FXML
     private void ataqueseguro(){
 
+        if(malo.vidamin(pokemon)) {
+            malo.setVidaActual(malo.vidaActual - 20);
+            pokemon.vidamin(malo);
+            actualizarbarra(malo, barramalo);
+        }
+
+        if(pokemon.vidamin(malo)) {
+            pokemon.setVidaActual(pokemon.vidaActual-20);
+            malo.vidamin(pokemon);
+            actualizarbarra(pokemon,barrabueno);}
+
     }
     @FXML
     private void ataquearriesgado(){
+
+        if(malo.vidamin(pokemon)) {
+            pokemon.ataquearriesgado(malo);
+            pokemon.vidamin(malo);
+            actualizarbarra(malo, barramalo);
+        }
+        if(pokemon.vidamin(malo)) {
+            malo.ataquearriesgado(pokemon);
+            malo.vidamin(pokemon);
+            actualizarbarra(pokemon, barrabueno);
+        }
 
     }
     @FXML
     private void ataquemuyarriesgado(){
 
+        if(malo.vidamin(pokemon)){
+            pokemon.ataquemuyarriesgado(malo);
+            pokemon.vidamin(malo);
+            actualizarbarra(malo,barramalo);}
+
+        if(pokemon.vidamin(malo)) {
+            malo.ataquemuyarriesgado(pokemon);
+            malo.vidamin(pokemon);
+            actualizarbarra(pokemon, barrabueno);
+        }
+
     }
 
     @FXML
     private void psentramalo(){
-        psmalo.setText(""+pkmalos.get(elecc).getVidaActual());
+        psmalo.setText(""+malo.getVidaActual());
     }
     @FXML
     public void pssalemalo(){psmalo.setText("PS");}
     @FXML
-    private void psentrabueno(){}
+    private void psentrabueno(){psbueno.setText(""+pokemon.getVidaActual());}
     @FXML
-    private void pssalebueno(){
-        psbueno.setText("PS");
-    }
-}
-class PokemonMalo {
-    String nombre;
-    float vidaActual;
-    float vidaTotal;
-    int nivel;
-    Image imagen;
+    private void pssalebueno(){psbueno.setText("PS");}
 
-    public PokemonMalo(String nombre, float vidaActual, float vidaTotal, int nivel, Image imagen) {
-        this.nombre = nombre;
-        this.vidaActual = vidaActual;
-        this.vidaTotal = vidaTotal;
-        this.nivel = nivel;
-        this.imagen = imagen;
-    }
-
-    public void ataque2(){
-        int segundo = (int) (Math.random()*25+10);
-    }
-
-    public void ataque3(){
-        int tercero = (int) (Math.random()*50);
-    }
-
-    public void cura(){
-        int curisima = (int) (Math.random()*75+25);
-    }
+    public void actualizarbarra(Pokemon pokemon, ProgressBar barra){
+        double salida = (double) pokemon.getVidaActual()/pokemon.getVidaTotal();
+        barra.setProgress(salida);
+        System.out.println(salida);
 
 
-
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public float getVidaActual() {
-        return vidaActual;
-    }
-
-    public void setVidaActual(float vidaActual) {
-        this.vidaActual = vidaActual;
-    }
-
-    public float getVidaTotal() {
-        return vidaTotal;
-    }
-
-    public void setVidaTotal(float vidaTotal) {
-        this.vidaTotal = vidaTotal;
-    }
-
-    public int getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(int nivel) {
-        this.nivel = nivel;
-    }
-
-    public Image getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(Image imagen) {
-        this.imagen = imagen;
     }
 }
