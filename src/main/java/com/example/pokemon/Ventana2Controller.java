@@ -172,7 +172,19 @@ public class Ventana2Controller {
 
     public void actualizarbarra(Pokemon pokemon, ProgressBar barra){
         double salida = (double) pokemon.getVidaActual()/pokemon.getVidaTotal();
+
         barra.setProgress(salida);
+
+        if (barra.getProgress() <= 0.50 && barra.getProgress() >= 0.25){
+            barra.setStyle("-fx-accent: #f1c905;");
+        }
+        if (barra.getProgress() < 0.25){
+            barra.setStyle("-fx-accent: #ff0000;");
+        }
+        if (barra.getProgress() > 0.50){
+            barra.setStyle("-fx-accent:  #94ED30;");
+        }
+
         System.out.println(salida);
 
 
