@@ -46,9 +46,9 @@ public class Ventana2Controller {
     @FXML
     ProgressBar barrabueno;
 
-
     Pokemon pokemon=null;
     Pokemon malo=null;
+    HelloController ventana1;
 
 
     @FXML
@@ -64,8 +64,13 @@ public class Ventana2Controller {
         nombremalo.setText(malo.getNombre().toUpperCase());
         nivelmalo.setText("Nv "+malo.getNivel());
         fotomalo.setImage(malo.getImagen());
-
     }
+
+
+    public void pasarvida(HelloController ventana1){
+        this.ventana1=ventana1;
+    }
+
 
     public void initialize() {
         ataque1.setVisible(false);
@@ -104,6 +109,7 @@ public class Ventana2Controller {
             malo.curasegura(pokemon);
             malo.vidamin(pokemon);
             actualizarbarra(pokemon,barrabueno);
+            ventana1.actualizarvida(pokemon);
         }
 
         if (malo.vidamin(pokemon)){
@@ -120,12 +126,15 @@ public class Ventana2Controller {
             malo.setVidaActual(malo.vidaActual - 20);
             pokemon.vidamin(malo);
             actualizarbarra(malo, barramalo);
+            ventana1.actualizarvida(pokemon);
         }
 
         if(pokemon.vidamin(malo)) {
             pokemon.setVidaActual(pokemon.vidaActual-20);
             malo.vidamin(pokemon);
-            actualizarbarra(pokemon,barrabueno);}
+            actualizarbarra(pokemon,barrabueno);
+            ventana1.actualizarvida(pokemon);
+        }
 
     }
     @FXML
@@ -186,7 +195,5 @@ public class Ventana2Controller {
         }
 
         System.out.println(salida);
-
-
     }
 }
