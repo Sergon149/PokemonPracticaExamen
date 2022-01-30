@@ -10,12 +10,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class HelloController {
 
@@ -327,6 +324,7 @@ public class HelloController {
             v2.initialize();
             v2.pasarpk(selec,malo);
             v2.pasarvida(this);
+            actualizarvida(selec);
 
         } catch (IOException e) {
             e.printStackTrace();
