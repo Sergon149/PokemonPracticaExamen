@@ -4,19 +4,16 @@ import javafx.scene.image.Image;
 
 public class Pokemon {
 
-    String nombre=" ";
-    int vidaActual=0;
-    int vidaTotal=0;
-    int nivel=0;
+    String nombre;
+    int vidaActual;
+    int vidaTotal;
+    int nivel;
     Image imagen;
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     public int getVidaActual() {
         return vidaActual;
@@ -30,24 +27,12 @@ public class Pokemon {
         return vidaTotal;
     }
 
-    public void setVidaTotal(int vidaTotal) {
-        this.vidaTotal = vidaTotal;
-    }
-
     public int getNivel() {
         return nivel;
     }
 
-    public void setNivel(int nivel) {
-        this.nivel = nivel;
-    }
-
     public Image getImagen() {
         return imagen;
-    }
-
-    public void setImagen(Image imagen) {
-        this.imagen = imagen;
     }
 
     public Pokemon(String nombre, int vidaActual, int vidaTotal, int nivel, Image imagen) {

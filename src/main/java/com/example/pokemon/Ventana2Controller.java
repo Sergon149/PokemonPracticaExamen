@@ -1,14 +1,10 @@
 package com.example.pokemon;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.image.Image;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-
-import java.net.PortUnreachableException;
-import java.util.ArrayList;
+import javafx.stage.Stage;
+import java.util.Optional;
 
 public class Ventana2Controller {
 
@@ -46,9 +42,9 @@ public class Ventana2Controller {
     @FXML
     ProgressBar barrabueno;
 
-
     Pokemon pokemon=null;
     Pokemon malo=null;
+    HelloController ventana1;
 
 
     @FXML
@@ -64,8 +60,13 @@ public class Ventana2Controller {
         nombremalo.setText(malo.getNombre().toUpperCase());
         nivelmalo.setText("Nv "+malo.getNivel());
         fotomalo.setImage(malo.getImagen());
-
     }
+
+
+    public void pasarvida(HelloController ventana1){
+        this.ventana1=ventana1;
+    }
+
 
     public void initialize() {
         ataque1.setVisible(false);
@@ -104,6 +105,7 @@ public class Ventana2Controller {
             malo.curasegura(pokemon);
             malo.vidamin(pokemon);
             actualizarbarra(pokemon,barrabueno);
+            ventana1.actualizarvida(pokemon);
         }
 
         if (malo.vidamin(pokemon)){
@@ -120,12 +122,17 @@ public class Ventana2Controller {
             malo.setVidaActual(malo.vidaActual - 20);
             pokemon.vidamin(malo);
             actualizarbarra(malo, barramalo);
+            ventana1.actualizarvida(pokemon);
+            showAlert();
         }
 
         if(pokemon.vidamin(malo)) {
             pokemon.setVidaActual(pokemon.vidaActual-20);
             malo.vidamin(pokemon);
-            actualizarbarra(pokemon,barrabueno);}
+            actualizarbarra(pokemon,barrabueno);
+            ventana1.actualizarvida(pokemon);
+            showAlert();
+        }
 
     }
     @FXML
@@ -135,11 +142,13 @@ public class Ventana2Controller {
             pokemon.ataquearriesgado(malo);
             pokemon.vidamin(malo);
             actualizarbarra(malo, barramalo);
+            showAlert();
         }
         if(pokemon.vidamin(malo)) {
             malo.ataquearriesgado(pokemon);
             malo.vidamin(pokemon);
             actualizarbarra(pokemon, barrabueno);
+            showAlert();
         }
 
     }
@@ -149,14 +158,52 @@ public class Ventana2Controller {
         if(malo.vidamin(pokemon)){
             pokemon.ataquemuyarriesgado(malo);
             pokemon.vidamin(malo);
-            actualizarbarra(malo,barramalo);}
+            actualizarbarra(malo,barramalo);
+            showAlert();
+        }
 
         if(pokemon.vidamin(malo)) {
             malo.ataquemuyarriesgado(pokemon);
             malo.vidamin(pokemon);
             actualizarbarra(pokemon, barrabueno);
+            showAlert();
         }
 
+    }
+
+    @FXML
+    public void showAlert() {
+        if (barramalo.getProgress() <= 0) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Fin del Combate");
+            alert.setHeaderText("¡Has ganado!");
+            alert.setContentText("Enhorabuena " + nombrebueno.getText());
+            alert.setGraphic(fotobueno);
+
+            Optional<ButtonType> resultado = alert.showAndWait();
+            if (resultado.get() == ButtonType.OK) {
+                System.exit(0);
+            } else if (resultado.get() == ButtonType.CANCEL) {
+                Stage stage = (Stage) cancelar.getScene().getWindow();
+                stage.close();
+            }
+        }
+
+        if (barrabueno.getProgress() <= 0) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Fin del Combate");
+            alert.setHeaderText("¡Has perdido!");
+            alert.setContentText("Enhorabuena " + nombremalo.getText());
+            alert.setGraphic(fotomalo);
+
+            Optional<ButtonType> resultado = alert.showAndWait();
+            if (resultado.get() == ButtonType.OK) {
+                System.exit(0);
+            } else if (resultado.get() == ButtonType.CANCEL) {
+                Stage stage = (Stage) cancelar.getScene().getWindow();
+                stage.close();
+            }
+        }
     }
 
     @FXML
@@ -186,7 +233,5 @@ public class Ventana2Controller {
         }
 
         System.out.println(salida);
-
-
     }
 }

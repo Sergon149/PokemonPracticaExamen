@@ -5,16 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class HelloController {
 
@@ -40,6 +38,8 @@ public class HelloController {
     @FXML
     ImageView img1;
     @FXML
+    ProgressBar barra1;
+    @FXML
     AnchorPane caja2;
     @FXML
     Label nom2;
@@ -49,6 +49,8 @@ public class HelloController {
     Label nivel2;
     @FXML
     ImageView img2;
+    @FXML
+    ProgressBar barra2;
     @FXML
     AnchorPane caja3;
     @FXML
@@ -60,6 +62,8 @@ public class HelloController {
     @FXML
     ImageView img3;
     @FXML
+    ProgressBar barra3;
+    @FXML
     AnchorPane caja4;
     @FXML
     Label nom4;
@@ -69,6 +73,8 @@ public class HelloController {
     Label nivel4;
     @FXML
     ImageView img4;
+    @FXML
+    ProgressBar barra4;
     @FXML
     AnchorPane caja5;
     @FXML
@@ -80,6 +86,8 @@ public class HelloController {
     @FXML
     ImageView img5;
     @FXML
+    ProgressBar barra5;
+    @FXML
     AnchorPane caja6;
     @FXML
     Label nom6;
@@ -89,6 +97,8 @@ public class HelloController {
     Label nivel6;
     @FXML
     ImageView img6;
+    @FXML
+    ProgressBar barra6;
     @FXML
     Button boton1;
 
@@ -100,26 +110,32 @@ public class HelloController {
         vida1.setText(pk1.vidaActual+"/"+ pk1.vidaTotal);
         nivel1.setText("NV "+pk1.nivel);
         img1.setImage(pk1.imagen);
+        barra1.setProgress((double) pk1.getVidaActual()/pk1.getVidaTotal());
         nom2.setText(pk2.nombre);
         vida2.setText(pk2.vidaActual+"/"+ pk2.vidaTotal);
         nivel2.setText("NV "+pk2.nivel);
         img2.setImage(pk2.imagen);
+        barra2.setProgress((double) pk2.getVidaActual()/pk2.getVidaTotal());
         nom3.setText(pk3.nombre);
         vida3.setText(pk3.vidaActual+"/"+ pk3.vidaTotal);
         nivel3.setText("NV "+pk3.nivel);
         img3.setImage(pk3.imagen);
+        barra3.setProgress((double) pk3.getVidaActual()/pk3.getVidaTotal());
         nom4.setText(pk4.nombre);
         vida4.setText(pk4.vidaActual+"/"+ pk4.vidaTotal);
         nivel4.setText("NV "+pk4.nivel);
         img4.setImage(pk4.imagen);
+        barra4.setProgress((double) pk4.getVidaActual()/pk4.getVidaTotal());
         nom5.setText(pk5.nombre);
         vida5.setText(pk5.vidaActual+"/"+ pk5.vidaTotal);
         nivel5.setText("NV "+pk5.nivel);
         img5.setImage(pk5.imagen);
+        barra5.setProgress((double) pk5.getVidaActual()/pk5.getVidaTotal());
         nom6.setText(pk6.nombre);
         vida6.setText(pk6.vidaActual+"/"+ pk6.vidaTotal);
         nivel6.setText("NV "+pk6.nivel);
         img6.setImage(pk6.imagen);
+        barra6.setProgress((double) pk6.getVidaActual()/pk6.getVidaTotal());
 
         pkmalos.add( new Pokemon ("Rayquaza",100, 100, 30,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/7/78/latest/20140111185443/Rayquaza_XY.gif")));
         pkmalos.add( new Pokemon ("Pikachu",100, 100,95,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/7/74/latest/20200104060734/Pikachu_EpEc.gif/111px-Pikachu_EpEc.gif")));
@@ -136,6 +152,7 @@ public class HelloController {
         nom1.setStyle("-fx-text-fill: #0BE1F0;");
         vida1.setStyle("-fx-text-fill: #0BE1F0;");
         nivel1.setStyle("-fx-text-fill: #0BE1F0;");
+
         nom2.setStyle("-fx-text-fill: #f8f7f7;");
         vida2.setStyle("-fx-text-fill: #f8f7f7;");
         nivel2.setStyle("-fx-text-fill: #f8f7f7;");
@@ -282,6 +299,12 @@ public class HelloController {
     public void clickboton(){boton1.setVisible(true);}
 
     @FXML
+    public void actualizarvida(Pokemon pokemon){
+        selec.setVidaActual(pokemon.getVidaActual());
+        initialize();
+    }
+
+    @FXML
     protected void onHelloButtonClick() {
         int elecc = (int) (Math.random()*pkmalos.size());
         Pokemon malo = pkmalos.get(elecc);
@@ -297,9 +320,11 @@ public class HelloController {
             stage2.show();
             stage2.setResizable(false);
 
-            Ventana2Controller v = loader.getController();
-            v.initialize();
-            v.pasarpk(selec,malo);
+            Ventana2Controller v2 = loader.getController();
+            v2.initialize();
+            v2.pasarpk(selec,malo);
+            v2.pasarvida(this);
+            actualizarvida(selec);
 
         } catch (IOException e) {
             e.printStackTrace();
