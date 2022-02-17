@@ -8,7 +8,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -30,6 +29,12 @@ public class HelloController {
 
     int danototalrecibido;
     int danototalejecutado;
+    int contpk1=0;
+    int contpk2=0;
+    int contpk3=0;
+    int contpk4=0;
+    int contpk5=0;
+    int contpk6=0;
 
     @FXML
     AnchorPane caja1;
@@ -351,6 +356,7 @@ public class HelloController {
 
             Estadisticas v3 = loader.getController();
             v3.generarquesito(danototalejecutado, danototalrecibido);
+            v3.generarbarras(pk1,pk2,pk3,pk4,pk5,pk6,contpk1, contpk2, contpk3, contpk4, contpk5, contpk6);
 
         } catch (IOException e) {
             e.printStackTrace();

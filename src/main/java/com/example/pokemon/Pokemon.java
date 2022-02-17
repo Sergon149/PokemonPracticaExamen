@@ -48,15 +48,11 @@ public class Pokemon {
 
     public int ataquearriesgado(Pokemon pokemon){
         int dano= (int) (Math.random()*25+10);
-
         pokemon.setVidaActual(pokemon.vidaActual-dano);
         System.out.println("El pokemon "+pokemon.getNombre()+" ha recibido "+dano);
         return dano;
-
-        //pokemon.setVidaActual((int) (pokemon.vidaActual-(Math.random()*25+10)));
-
-
     }
+
     public int ataquemuyarriesgado(Pokemon pokemon){
         int dano= (int) (Math.random()*50);
         pokemon.setVidaActual(pokemon.vidaActual-dano);
@@ -71,8 +67,5 @@ public class Pokemon {
         }else {
             return true;
         }
-
     }
-
-
 }
