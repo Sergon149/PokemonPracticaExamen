@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -26,6 +27,9 @@ public class HelloController {
     ArrayList<Pokemon> pkmalos = new ArrayList<>();
 
     int num;
+
+    int danototalrecibido;
+    int danototalejecutado;
 
     @FXML
     AnchorPane caja1;
@@ -330,4 +334,26 @@ public class HelloController {
             e.printStackTrace();
         }
     }
+
+    public void pasargraficas() {
+
+        try {
+            Stage stage3 = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Ventana3.fxml"));
+
+            AnchorPane root =  loader.load();
+            Scene scene = new Scene(root, 720, 400);
+
+            stage3.setTitle("GRÁFICAS");
+            stage3.setScene(scene);
+            stage3.show();
+            stage3.setResizable(false);
+
+            Estadisticas v3 = loader.getController();
+            v3.generarquesito(danototalejecutado, danototalrecibido);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+}

@@ -164,7 +164,7 @@
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <Button layoutX="308.0" layoutY="8.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="94.0" text="Estadisticas" />
+            <Button layoutX="308.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#pasargraficas" prefHeight="21.0" prefWidth="94.0" text="Estadisticas" />
          </children></AnchorPane>
    </bottom>
 </BorderPane>

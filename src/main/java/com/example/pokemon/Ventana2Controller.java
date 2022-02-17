@@ -123,6 +123,7 @@ public class Ventana2Controller {
             pokemon.vidamin(malo);
             actualizarbarra(malo, barramalo);
             ventana1.actualizarvida(pokemon);
+            ventana1.danototalejecutado += 20;
             showAlert();
         }
 
@@ -131,39 +132,41 @@ public class Ventana2Controller {
             malo.vidamin(pokemon);
             actualizarbarra(pokemon,barrabueno);
             ventana1.actualizarvida(pokemon);
+            ventana1.danototalrecibido += 20;
             showAlert();
         }
 
     }
     @FXML
-    private void ataquearriesgado(){
+    private int ataquearriesgado(){
 
         if(malo.vidamin(pokemon)) {
-            pokemon.ataquearriesgado(malo);
+            ventana1.danototalejecutado += pokemon.ataquearriesgado(malo);
             pokemon.vidamin(malo);
             actualizarbarra(malo, barramalo);
             showAlert();
         }
         if(pokemon.vidamin(malo)) {
-            malo.ataquearriesgado(pokemon);
+            ventana1.danototalrecibido += malo.ataquearriesgado(pokemon);
             malo.vidamin(pokemon);
             actualizarbarra(pokemon, barrabueno);
             showAlert();
         }
 
+        return 0;
     }
     @FXML
     private void ataquemuyarriesgado(){
 
         if(malo.vidamin(pokemon)){
-            pokemon.ataquemuyarriesgado(malo);
+            ventana1.danototalejecutado += pokemon.ataquemuyarriesgado(malo);
             pokemon.vidamin(malo);
             actualizarbarra(malo,barramalo);
             showAlert();
         }
 
         if(pokemon.vidamin(malo)) {
-            malo.ataquemuyarriesgado(pokemon);
+            ventana1.danototalrecibido += malo.ataquemuyarriesgado(pokemon);
             malo.vidamin(pokemon);
             actualizarbarra(pokemon, barrabueno);
             showAlert();

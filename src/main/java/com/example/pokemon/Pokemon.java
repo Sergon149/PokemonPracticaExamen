@@ -46,13 +46,22 @@ public class Pokemon {
         pokemon.setVidaActual((int) (pokemon.vidaActual+(Math.random()*75+25)));
     }
 
-    public void ataquearriesgado(Pokemon pokemon){
-        pokemon.setVidaActual((int) (pokemon.vidaActual-(Math.random()*25+10)));
+    public int ataquearriesgado(Pokemon pokemon){
+        int dano= (int) (Math.random()*25+10);
+
+        pokemon.setVidaActual(pokemon.vidaActual-dano);
+        System.out.println("El pokemon "+pokemon.getNombre()+" ha recibido "+dano);
+        return dano;
+
+        //pokemon.setVidaActual((int) (pokemon.vidaActual-(Math.random()*25+10)));
+
+
     }
-    public void ataquemuyarriesgado(Pokemon pokemon){
+    public int ataquemuyarriesgado(Pokemon pokemon){
         int dano= (int) (Math.random()*50);
         pokemon.setVidaActual(pokemon.vidaActual-dano);
         System.out.println("El pokemon "+pokemon.getNombre()+" ha recibido "+dano);
+        return dano;
     }
 
     public boolean vidamin(Pokemon pokemon){
@@ -64,5 +73,6 @@ public class Pokemon {
         }
 
     }
+
 
 }
