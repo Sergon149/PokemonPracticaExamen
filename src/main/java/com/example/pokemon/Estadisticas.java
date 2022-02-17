@@ -3,6 +3,7 @@ package com.example.pokemon;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.chart.*;
 
 public class Estadisticas {
@@ -26,15 +27,16 @@ public class Estadisticas {
 
     public void generarbarras(Pokemon pk1, Pokemon pk2, Pokemon pk3, Pokemon pk4, Pokemon pk5, Pokemon pk6, int contpk1, int contpk2, int contpk3, int contpk4, int contpk5, int contpk6) {
 
-        barras.setTitle("Eleccion de pokemons");
+
         final CategoryAxis xAxis = new CategoryAxis();
         final NumberAxis yAxis = new NumberAxis();
-        final BarChart<String,Number> bc = new BarChart<String,Number>(xAxis,yAxis);
+        final BarChart<String,Number> barras = new BarChart<String,Number>(xAxis,yAxis);
         xAxis.setLabel("NºVeces");
         yAxis.setLabel("Pokemon");
+        barras.setTitle("Eleccion de pokemons");
 
         XYChart.Series series1 = new XYChart.Series();
-        series1.setName(pk1.nombre);
+        series1.setName("pk1.nombre");
         series1.getData().add(new XYChart.Data(pk1.nombre, contpk1));
 
         XYChart.Series series2 = new XYChart.Series();
@@ -57,10 +59,15 @@ public class Estadisticas {
         series6.setName(pk6.nombre);
         series6.getData().add(new XYChart.Data(pk6.nombre, contpk6));
 
-        bc.getData().addAll(series1,series2,series3,series4,series5,series6);
+        barras.getData().addAll(series1,series2,series3,series4,series5,series6);
 
     }
 }
 /*
-
+Pokemon pk1=new Pokemon("Jolteon",200, 200, 65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/135.png"));
+    Pokemon pk2=new Pokemon("Charizard",200, 200,45,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png"));
+    Pokemon pk3=new Pokemon("Vaporeon",200, 200,54,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/134.png"));
+    Pokemon pk4=new Pokemon("Blastoide",200, 200,65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"));
+    Pokemon pk5=new Pokemon("Mewtwo",200, 200,75,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/150.png"));
+    Pokemon pk6=new Pokemon("Butterfree",200, 200,54,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/012.png"));
 * */
