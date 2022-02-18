@@ -215,11 +215,17 @@ public class Ventana2Controller {
         psmalo.setText(""+malo.getVidaActual());
     }
     @FXML
-    public void pssalemalo(){psmalo.setText("PS");}
+    public void pssalemalo(){
+        psmalo.setText("PS");
+    }
     @FXML
-    private void psentrabueno(){psbueno.setText(""+pokemon.getVidaActual());}
+    private void psentrabueno(){
+        psbueno.setText(""+pokemon.getVidaActual());
+    }
     @FXML
-    private void pssalebueno(){psbueno.setText("PS");}
+    private void pssalebueno(){
+        psbueno.setText("PS");
+    }
 
     public void actualizarbarra(Pokemon pokemon, ProgressBar barra){
         double salida = (double) pokemon.getVidaActual()/pokemon.getVidaTotal();
