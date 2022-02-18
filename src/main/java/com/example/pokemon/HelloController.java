@@ -16,12 +16,12 @@ import java.util.ArrayList;
 
 public class HelloController {
 
-    Pokemon pk1=new Pokemon("Jolteon",200, 200, 65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/135.png"));
-    Pokemon pk2=new Pokemon("Charizard",200, 200,45,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png"));
-    Pokemon pk3=new Pokemon("Vaporeon",200, 200,54,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/134.png"));
-    Pokemon pk4=new Pokemon("Blastoide",200, 200,65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"));
-    Pokemon pk5=new Pokemon("Mewtwo",200, 200,75,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/150.png"));
-    Pokemon pk6=new Pokemon("Butterfree",200, 200,54,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/012.png"));
+    Pokemon pk1=new Pokemon("Jolteon",200, 200, 65,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/135.png"));
+    Pokemon pk2=new Pokemon("Charizard",200, 200,45,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png"));
+    Pokemon pk3=new Pokemon("Vaporeon",200, 200,54,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/134.png"));
+    Pokemon pk4=new Pokemon("Blastoide",200, 200,65,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"));
+    Pokemon pk5=new Pokemon("Mewtwo",200, 200,75,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/150.png"));
+    Pokemon pk6=new Pokemon("Butterfree",200, 200,54,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/012.png"));
 
     ArrayList<Pokemon> pkmalos = new ArrayList<>();
 
@@ -29,12 +29,6 @@ public class HelloController {
 
     int danototalrecibido;
     int danototalejecutado;
-    int contpk1=0;
-    int contpk2=0;
-    int contpk3=0;
-    int contpk4=0;
-    int contpk5=0;
-    int contpk6=0;
 
     @FXML
     AnchorPane caja1;
@@ -146,10 +140,10 @@ public class HelloController {
         img6.setImage(pk6.imagen);
         barra6.setProgress((double) pk6.getVidaActual()/pk6.getVidaTotal());
 
-        pkmalos.add( new Pokemon ("Rayquaza",100, 100, 30,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/7/78/latest/20140111185443/Rayquaza_XY.gif")));
-        pkmalos.add( new Pokemon ("Pikachu",100, 100,95,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/7/74/latest/20200104060734/Pikachu_EpEc.gif/111px-Pikachu_EpEc.gif")));
-        pkmalos.add( new Pokemon ("Tyranitar",100, 100,45,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/5/5d/latest/20200105034804/Tyranitar_EpEc.gif/88px-Tyranitar_EpEc.gif")));
-        pkmalos.add( new Pokemon ("Mr. Mine",100, 100,60,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/3/39/latest/20200104030503/Mr._Mime_EpEc.gif/120px-Mr._Mime_EpEc.gif")));
+        pkmalos.add( new Pokemon ("Rayquaza",100, 100, 30,0,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/7/78/latest/20140111185443/Rayquaza_XY.gif")));
+        pkmalos.add( new Pokemon ("Pikachu",100, 100,95,0,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/7/74/latest/20200104060734/Pikachu_EpEc.gif/111px-Pikachu_EpEc.gif")));
+        pkmalos.add( new Pokemon ("Tyranitar",100, 100,45,0,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/5/5d/latest/20200105034804/Tyranitar_EpEc.gif/88px-Tyranitar_EpEc.gif")));
+        pkmalos.add( new Pokemon ("Mr. Mine",100, 100,60,0,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/3/39/latest/20200104030503/Mr._Mime_EpEc.gif/120px-Mr._Mime_EpEc.gif")));
     }
 
     @FXML
@@ -356,7 +350,7 @@ public class HelloController {
 
             Estadisticas v3 = loader.getController();
             v3.generarquesito(danototalejecutado, danototalrecibido);
-            v3.generarbarras(pk1,pk2,pk3,pk4,pk5,pk6,contpk1, contpk2, contpk3, contpk4, contpk5, contpk6);
+            v3.generarbarras(pk1,pk2,pk3,pk4,pk5,pk6);
 
         } catch (IOException e) {
             e.printStackTrace();

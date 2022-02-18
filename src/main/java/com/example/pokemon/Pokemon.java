@@ -8,7 +8,9 @@ public class Pokemon {
     int vidaActual;
     int vidaTotal;
     int nivel;
+    int numveces;
     Image imagen;
+
 
     public String getNombre() {
         return nombre;
@@ -35,11 +37,12 @@ public class Pokemon {
         return imagen;
     }
 
-    public Pokemon(String nombre, int vidaActual, int vidaTotal, int nivel, Image imagen) {
+    public Pokemon(String nombre, int vidaActual, int vidaTotal, int nivel, int numveces, Image imagen) {
         this.nombre = nombre;
         this.vidaActual = vidaActual;
         this.vidaTotal = vidaTotal;
         this.nivel = nivel;
+        this.numveces = numveces;
         this.imagen = imagen;
     }
     public void curasegura(Pokemon pokemon){

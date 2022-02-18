@@ -53,23 +53,11 @@ public class Ventana2Controller {
         this.pokemon=pokemon;
         this.malo=malo;
 
-        if (nombrebueno.equals("Jolteon")){
-            ventana1.contpk1++;
-        }else if(nombrebueno.equals("Charizard")){
-            ventana1.contpk2++;
-        }else if(nombrebueno.equals("Vaporeon")){
-            ventana1.contpk3++;
-        }else if(nombrebueno.equals("Blastoide")){
-            ventana1.contpk4++;
-        }else if(nombrebueno.equals("Mewtwo")){
-            ventana1.contpk5++;
-        }else if(nombrebueno.equals("Butterfree")){
-            ventana1.contpk6++;
-        }
-
         nombrebueno.setText(pokemon.nombre.toUpperCase());
         nivelbueno.setText("Nv "+pokemon.nivel);
         fotobueno.setImage(pokemon.imagen);
+
+        pokemon.numveces += 1;
 
         nombremalo.setText(malo.getNombre().toUpperCase());
         nivelmalo.setText("Nv "+malo.getNivel());
@@ -87,7 +75,6 @@ public class Ventana2Controller {
         ataque2.setVisible(false);
         ataque3.setVisible(false);
         cancelar.setVisible(false);
-
     }
 
 
