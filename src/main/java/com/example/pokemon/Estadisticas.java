@@ -34,6 +34,7 @@ public class Estadisticas {
 
         xAxis.setLabel("NºVeces");
         yAxis.setLabel("Pokemon");
+        yAxis.applyCss();
         barras.setTitle("Eleccion de pokemons");
 
         XYChart.Series series1 = new XYChart.Series();
@@ -59,19 +60,10 @@ public class Estadisticas {
         XYChart.Series series6 = new XYChart.Series();
         series6.setName(pk6.nombre);
         series6.getData().add(new XYChart.Data(pk6.nombre, pk6.numveces));
+
         barras.setAnimated(false);
 
         barras.getData().addAll(series1,series2,series3,series4,series5,series6);
 
     }
 }
-
-
-/*
-Pokemon pk1=new Pokemon("Jolteon",200, 200, 65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/135.png"));
-    Pokemon pk2=new Pokemon("Charizard",200, 200,45,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png"));
-    Pokemon pk3=new Pokemon("Vaporeon",200, 200,54,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/134.png"));
-    Pokemon pk4=new Pokemon("Blastoide",200, 200,65,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"));
-    Pokemon pk5=new Pokemon("Mewtwo",200, 200,75,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/150.png"));
-    Pokemon pk6=new Pokemon("Butterfree",200, 200,54,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/012.png"));
-* */
