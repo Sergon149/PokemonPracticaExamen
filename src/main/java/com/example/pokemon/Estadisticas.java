@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
 
+import static com.example.pokemon.HelloController.*;
+
 public class Estadisticas {
     @FXML
     PieChart quesito;
@@ -13,7 +15,7 @@ public class Estadisticas {
     BarChart barras;
 
 
-    public void generarquesito(int danototalejecutado, int danototalrecibido) {
+    public void actualizarquesito() {
 
         quesito.setTitle("Daño entre Pokemons");
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
@@ -26,8 +28,7 @@ public class Estadisticas {
     }
 
 
-    public void generarbarras(Pokemon pk1, Pokemon pk2, Pokemon pk3, Pokemon pk4, Pokemon pk5, Pokemon pk6) {
-
+    public void actualizarbarras() {
 
         final CategoryAxis xAxis = new CategoryAxis();
         final NumberAxis yAxis = new NumberAxis();

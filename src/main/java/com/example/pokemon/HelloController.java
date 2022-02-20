@@ -16,19 +16,20 @@ import java.util.ArrayList;
 
 public class HelloController {
 
-    Pokemon pk1=new Pokemon("Jolteon",200, 200, 65,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/135.png"));
-    Pokemon pk2=new Pokemon("Charizard",200, 200,45,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png"));
-    Pokemon pk3=new Pokemon("Vaporeon",200, 200,54,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/134.png"));
-    Pokemon pk4=new Pokemon("Blastoide",200, 200,65,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"));
-    Pokemon pk5=new Pokemon("Mewtwo",200, 200,75,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/150.png"));
-    Pokemon pk6=new Pokemon("Butterfree",200, 200,54,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/012.png"));
+    static Pokemon pk1=new Pokemon("Jolteon",200, 200, 65,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/135.png"));
+    static Pokemon pk2=new Pokemon("Charizard",200, 200,45,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png"));
+    static Pokemon pk3=new Pokemon("Vaporeon",200, 200,54,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/134.png"));
+    static Pokemon pk4=new Pokemon("Blastoide",200, 200,65,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"));
+    static Pokemon pk5=new Pokemon("Mewtwo",200, 200,75,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/150.png"));
+    static Pokemon pk6=new Pokemon("Butterfree",200, 200,54,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/012.png"));
 
     ArrayList<Pokemon> pkmalos = new ArrayList<>();
 
     int num;
 
-    int danototalrecibido;
-    int danototalejecutado;
+    static int danototalrecibido;
+    static int danototalejecutado;
+    Estadisticas stats;
 
     @FXML
     AnchorPane caja1;
@@ -106,6 +107,7 @@ public class HelloController {
     Button boton1;
 
     Pokemon selec = null;
+
 
     @FXML
     public void initialize(){
@@ -307,6 +309,11 @@ public class HelloController {
         initialize();
     }
 
+    public void actualizarStats(){
+        stats.actualizarquesito();
+        stats.actualizarbarras();
+    }
+
     @FXML
     protected void onHelloButtonClick() {
         int elecc = (int) (Math.random()*pkmalos.size());
@@ -349,8 +356,8 @@ public class HelloController {
             stage3.setResizable(false);
 
             Estadisticas v3 = loader.getController();
-            v3.generarquesito(danototalejecutado, danototalrecibido);
-            v3.generarbarras(pk1,pk2,pk3,pk4,pk5,pk6);
+            v3.actualizarquesito();
+            v3.actualizarbarras();
 
         } catch (IOException e) {
             e.printStackTrace();
