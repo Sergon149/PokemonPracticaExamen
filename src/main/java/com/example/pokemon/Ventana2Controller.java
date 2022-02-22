@@ -45,7 +45,6 @@ public class Ventana2Controller {
     Pokemon pokemon=null;
     Pokemon malo=null;
     HelloController ventana1;
-    Estadisticas stats;
 
 
     @FXML
@@ -58,7 +57,6 @@ public class Ventana2Controller {
         nivelbueno.setText("Nv "+pokemon.nivel);
         fotobueno.setImage(pokemon.imagen);
 
-        pokemon.numveces += 1;
 
         nombremalo.setText(malo.getNombre().toUpperCase());
         nivelmalo.setText("Nv "+malo.getNivel());
@@ -115,7 +113,6 @@ public class Ventana2Controller {
             pokemon.vidamin(malo);
             actualizarbarra(malo,barramalo);
         }
-        ventana1.actualizarStats();
     }
 
     @FXML
@@ -137,7 +134,7 @@ public class Ventana2Controller {
             HelloController.danototalrecibido += 20;
             showAlert();
         }
-        ventana1.actualizarStats();
+        ventana1.actualizarStats1();
     }
     @FXML
     private int ataquearriesgado(){
@@ -155,7 +152,7 @@ public class Ventana2Controller {
             ventana1.actualizarvida(pokemon);
             showAlert();
         }
-        ventana1.actualizarStats();
+        ventana1.actualizarStats1();
 
         return 0;
     }
@@ -176,7 +173,7 @@ public class Ventana2Controller {
             ventana1.actualizarvida(pokemon);
             showAlert();
         }
-        ventana1.actualizarStats();
+        ventana1.actualizarStats1();
 
     }
 

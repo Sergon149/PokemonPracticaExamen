@@ -25,11 +25,11 @@ public class HelloController {
 
     ArrayList<Pokemon> pkmalos = new ArrayList<>();
 
-    int num;
+    int num=0;
 
-    static int danototalrecibido;
-    static int danototalejecutado;
-    Estadisticas stats;
+    static int danototalrecibido =0;
+    static int danototalejecutado =0;
+    public Estadisticas stats;
 
     @FXML
     AnchorPane caja1;
@@ -309,10 +309,7 @@ public class HelloController {
         initialize();
     }
 
-    public void actualizarStats(){
-        stats.actualizarquesito();
-        stats.actualizarbarras();
-    }
+
 
     @FXML
     protected void onHelloButtonClick() {
@@ -329,6 +326,9 @@ public class HelloController {
             stage2.setScene(scene);
             stage2.show();
             stage2.setResizable(false);
+
+            selec.numveces += 1;
+            actualizarStats2();
 
             Ventana2Controller v2 = loader.getController();
             v2.initialize();
@@ -350,6 +350,8 @@ public class HelloController {
             AnchorPane root =  loader.load();
             Scene scene = new Scene(root, 720, 400);
 
+            stats=loader.getController();
+
             stage3.setTitle("GRÁFICAS");
             stage3.setScene(scene);
             stage3.show();
@@ -362,5 +364,15 @@ public class HelloController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void actualizarStats1(){
+        System.out.println("he llegado a hC");
+        if (stats != null)
+            stats.actualizarquesito();
+    }
+    public void actualizarStats2(){
+        if (stats != null)
+            stats.actualizarbarras();
     }
 }
