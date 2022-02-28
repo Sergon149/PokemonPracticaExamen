@@ -13,6 +13,7 @@ public class Estadisticas {
     @FXML
     BarChart barras;
 
+      HelloController ventana1;
 
     public void actualizarquesito() {
 
@@ -39,28 +40,28 @@ public class Estadisticas {
             barras.setTitle("Eleccion de pokemons");
 
             XYChart.Series series1 = new XYChart.Series();
-            series1.setName(pk1.nombre);
-            series1.getData().add(new XYChart.Data(pk1.nombre, pk1.numveces));
+            series1.setName(ventana1.pk1.nombre);
+            series1.getData().add(new XYChart.Data(ventana1.pk1.nombre, ventana1.pk1.numveces));
 
             XYChart.Series series2 = new XYChart.Series();
-            series2.setName(pk2.nombre);
-            series2.getData().add(new XYChart.Data(pk2.nombre, pk2.numveces));
+            series2.setName(ventana1.pk2.nombre);
+            series2.getData().add(new XYChart.Data(ventana1.pk2.nombre, ventana1.pk2.numveces));
 
             XYChart.Series series3 = new XYChart.Series();
-            series3.setName(pk3.nombre);
-            series3.getData().add(new XYChart.Data(pk3.nombre, pk3.numveces));
+            series3.setName(ventana1.pk3.nombre);
+            series3.getData().add(new XYChart.Data(ventana1.pk3.nombre, ventana1.pk3.numveces));
 
             XYChart.Series series4 = new XYChart.Series();
-            series4.setName(pk4.nombre);
-            series4.getData().add(new XYChart.Data(pk4.nombre, pk4.numveces));
+            series4.setName(ventana1.pk4.nombre);
+            series4.getData().add(new XYChart.Data(ventana1.pk4.nombre, ventana1.pk4.numveces));
 
             XYChart.Series series5 = new XYChart.Series();
-            series5.setName(pk5.nombre);
-            series5.getData().add(new XYChart.Data(pk5.nombre, pk5.numveces));
+            series5.setName(ventana1.pk5.nombre);
+            series5.getData().add(new XYChart.Data(ventana1.pk5.nombre, ventana1.pk5.numveces));
 
             XYChart.Series series6 = new XYChart.Series();
-            series6.setName(pk6.nombre);
-            series6.getData().add(new XYChart.Data(pk6.nombre, pk6.numveces));
+            series6.setName(ventana1.pk6.nombre);
+            series6.getData().add(new XYChart.Data(ventana1.pk6.nombre, ventana1.pk6.numveces));
 
             barras.setAnimated(false);
 
@@ -68,28 +69,28 @@ public class Estadisticas {
         }else{
 
             XYChart.Series series1 = new XYChart.Series();
-            series1.setName(pk1.nombre);
-            series1.getData().add(new XYChart.Data(pk1.nombre, pk1.numveces));
+            series1.setName(ventana1.pk1.nombre);
+            series1.getData().add(new XYChart.Data(ventana1.pk1.nombre, ventana1.pk1.numveces));
 
             XYChart.Series series2 = new XYChart.Series();
-            series2.setName(pk2.nombre);
-            series2.getData().add(new XYChart.Data(pk2.nombre, pk2.numveces));
+            series2.setName(ventana1.pk2.nombre);
+            series2.getData().add(new XYChart.Data(ventana1.pk2.nombre, ventana1.pk2.numveces));
 
             XYChart.Series series3 = new XYChart.Series();
-            series3.setName(pk3.nombre);
-            series3.getData().add(new XYChart.Data(pk3.nombre, pk3.numveces));
+            series3.setName(ventana1.pk3.nombre);
+            series3.getData().add(new XYChart.Data(ventana1.pk3.nombre, ventana1.pk3.numveces));
 
             XYChart.Series series4 = new XYChart.Series();
-            series4.setName(pk4.nombre);
-            series4.getData().add(new XYChart.Data(pk4.nombre, pk4.numveces));
+            series4.setName(ventana1.pk4.nombre);
+            series4.getData().add(new XYChart.Data(ventana1.pk4.nombre, ventana1.pk4.numveces));
 
             XYChart.Series series5 = new XYChart.Series();
-            series5.setName(pk5.nombre);
-            series5.getData().add(new XYChart.Data(pk5.nombre, pk5.numveces));
+            series5.setName(ventana1.pk5.nombre);
+            series5.getData().add(new XYChart.Data(ventana1.pk5.nombre, ventana1.pk5.numveces));
 
             XYChart.Series series6 = new XYChart.Series();
-            series6.setName(pk6.nombre);
-            series6.getData().add(new XYChart.Data(pk6.nombre, pk6.numveces));
+            series6.setName(ventana1.pk6.nombre);
+            series6.getData().add(new XYChart.Data(ventana1.pk6.nombre, ventana1.pk6.numveces));
 
 
             BarChart bc = new BarChart(xAxis,yAxis);

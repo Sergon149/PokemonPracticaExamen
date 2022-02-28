@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+
+import java.io.FileNotFoundException;
 import java.util.Optional;
 
 public class Ventana2Controller {
@@ -100,7 +102,7 @@ public class Ventana2Controller {
     }
 
     @FXML
-    private void curarse(){
+    private void curarse() throws FileNotFoundException {
         if (pokemon.vidamin(malo)){
             malo.curasegura(pokemon);
             malo.vidamin(pokemon);
@@ -116,7 +118,7 @@ public class Ventana2Controller {
     }
 
     @FXML
-    private void ataqueseguro(){
+    private void ataqueseguro() throws FileNotFoundException {
 
         if(malo.vidamin(pokemon)) {
             malo.setVidaActual(malo.vidaActual - 20);
@@ -137,7 +139,7 @@ public class Ventana2Controller {
         ventana1.actualizarStats1();
     }
     @FXML
-    private int ataquearriesgado(){
+    private int ataquearriesgado() throws FileNotFoundException {
 
         if(malo.vidamin(pokemon)) {
             HelloController.danototalejecutado += pokemon.ataquearriesgado(malo);
@@ -157,7 +159,7 @@ public class Ventana2Controller {
         return 0;
     }
     @FXML
-    private void ataquemuyarriesgado(){
+    private void ataquemuyarriesgado() throws FileNotFoundException {
 
         if(malo.vidamin(pokemon)){
             HelloController.danototalejecutado += pokemon.ataquemuyarriesgado(malo);
@@ -183,15 +185,15 @@ public class Ventana2Controller {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Fin del Combate");
             alert.setHeaderText("¡Has ganado!");
-            alert.setContentText("Enhorabuena " + nombrebueno.getText());
+            alert.setContentText("Enhorabuena " + nombrebueno.getText()+"\n ¿Quieres continuar?");
             alert.setGraphic(fotobueno);
 
             Optional<ButtonType> resultado = alert.showAndWait();
             if (resultado.get() == ButtonType.OK) {
-                System.exit(0);
-            } else if (resultado.get() == ButtonType.CANCEL) {
                 Stage stage = (Stage) cancelar.getScene().getWindow();
                 stage.close();
+            } else if (resultado.get() == ButtonType.CANCEL) {
+                System.exit(0);
             }
         }
 
@@ -204,10 +206,10 @@ public class Ventana2Controller {
 
             Optional<ButtonType> resultado = alert.showAndWait();
             if (resultado.get() == ButtonType.OK) {
-                System.exit(0);
-            } else if (resultado.get() == ButtonType.CANCEL) {
                 Stage stage = (Stage) cancelar.getScene().getWindow();
                 stage.close();
+            } else if (resultado.get() == ButtonType.CANCEL) {
+                System.exit(0);
             }
         }
     }

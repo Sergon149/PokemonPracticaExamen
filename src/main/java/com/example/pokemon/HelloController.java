@@ -11,17 +11,29 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class HelloController {
 
-    static Pokemon pk1=new Pokemon("Jolteon",200, 200, 65,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/135.png"));
+    Pokemon pk1=new Pokemon("Jolteon",200, 200, 65,0,new Image(new FileInputStream(".\\src\\main\\resources\\Imagenes\\Jolteon.gif")));
+    Pokemon pk2=new Pokemon("Charizard",200, 200,45,0,new Image(new FileInputStream(".\\src\\main\\resources\\Imagenes\\Charizard.gif")));
+    Pokemon pk3=new Pokemon("Vaporeon",200, 200,54,0,new Image(new FileInputStream(".\\src\\main\\resources\\Imagenes\\Vaporeon.gif")));
+    Pokemon pk4=new Pokemon("Blastoise",200, 200,65,0,new Image(new FileInputStream(".\\src\\main\\resources\\Imagenes\\Blastoise.gif")));
+    Pokemon pk5=new Pokemon("Mewtwo",200, 200,75,0,new Image(new FileInputStream(".\\src\\main\\resources\\Imagenes\\Mewtwo.gif")));
+    Pokemon pk6=new Pokemon("Butterfree",200, 200,54,0,new Image(new FileInputStream(".\\src\\main\\resources\\Imagenes\\Butterfree.gif")));
+
+
+    /*static Pokemon pk1=new Pokemon("Jolteon",200, 200, 65,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/135.png"));
     static Pokemon pk2=new Pokemon("Charizard",200, 200,45,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png"));
     static Pokemon pk3=new Pokemon("Vaporeon",200, 200,54,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/134.png"));
-    static Pokemon pk4=new Pokemon("Blastoide",200, 200,65,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"));
+    static Pokemon pk4=new Pokemon("Blastoise",200, 200,65,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"));
     static Pokemon pk5=new Pokemon("Mewtwo",200, 200,75,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/150.png"));
     static Pokemon pk6=new Pokemon("Butterfree",200, 200,54,0,new Image("https://assets.pokemon.com/assets/cms2/img/pokedex/detail/012.png"));
+     */
 
     ArrayList<Pokemon> pkmalos = new ArrayList<>();
 
@@ -105,12 +117,17 @@ public class HelloController {
     ProgressBar barra6;
     @FXML
     Button boton1;
+    @FXML
+    Button botonpokedex;
 
     Pokemon selec = null;
 
+    public HelloController() throws FileNotFoundException {
+    }
+
 
     @FXML
-    public void initialize(){
+    public void initialize() throws FileNotFoundException {
         nom1.setText(pk1.nombre);
         vida1.setText(pk1.vidaActual+"/"+ pk1.vidaTotal);
         nivel1.setText("NV "+pk1.nivel);
@@ -142,11 +159,78 @@ public class HelloController {
         img6.setImage(pk6.imagen);
         barra6.setProgress((double) pk6.getVidaActual()/pk6.getVidaTotal());
 
+
+        if (barra1.getProgress() <= 0.50 && barra1.getProgress() >= 0.25){
+            barra1.setStyle("-fx-accent: #f1c905;");
+        }
+        if (barra1.getProgress() < 0.25){
+            barra1.setStyle("-fx-accent: #ff0000;");
+        }
+        if (barra1.getProgress() > 0.50){
+            barra1.setStyle("-fx-accent:  #94ED30;");
+        }
+
+        if (barra2.getProgress() <= 0.50 && barra2.getProgress() >= 0.25){
+            barra2.setStyle("-fx-accent: #f1c905;");
+        }
+        if (barra2.getProgress() < 0.25){
+            barra2.setStyle("-fx-accent: #ff0000;");
+        }
+        if (barra2.getProgress() > 0.50){
+            barra2.setStyle("-fx-accent:  #94ED30;");
+        }
+
+        if (barra3.getProgress() <= 0.50 && barra3.getProgress() >= 0.25){
+            barra3.setStyle("-fx-accent: #f1c905;");
+        }
+        if (barra3.getProgress() < 0.25){
+            barra3.setStyle("-fx-accent: #ff0000;");
+        }
+        if (barra3.getProgress() > 0.50){
+            barra3.setStyle("-fx-accent:  #94ED30;");
+        }
+
+        if (barra4.getProgress() <= 0.50 && barra4.getProgress() >= 0.25){
+            barra4.setStyle("-fx-accent: #f1c905;");
+        }
+        if (barra4.getProgress() < 0.25){
+            barra4.setStyle("-fx-accent: #ff0000;");
+        }
+        if (barra4.getProgress() > 0.50){
+            barra4.setStyle("-fx-accent:  #94ED30;");
+        }
+
+        if (barra5.getProgress() <= 0.50 && barra5.getProgress() >= 0.25){
+            barra5.setStyle("-fx-accent: #f1c905;");
+        }
+        if (barra5.getProgress() < 0.25){
+            barra5.setStyle("-fx-accent: #ff0000;");
+        }
+        if (barra5.getProgress() > 0.50){
+            barra5.setStyle("-fx-accent:  #94ED30;");
+        }
+
+        if (barra6.getProgress() <= 0.50 && barra6.getProgress() >= 0.25){
+            barra6.setStyle("-fx-accent: #f1c905;");
+        }
+        if (barra6.getProgress() < 0.25){
+            barra6.setStyle("-fx-accent: #ff0000;");
+        }
+        if (barra6.getProgress() > 0.50){
+            barra6.setStyle("-fx-accent:  #94ED30;");
+        }
+
+        pkmalos.add( new Pokemon ("Rayquaza",100, 100, 30,0,new Image(new FileInputStream(".\\src\\main\\resources\\Imagenes\\Rayquaza.gif"))));
+        pkmalos.add( new Pokemon ("Pikachu",100, 100,95,0,new Image(new FileInputStream(".\\src\\main\\resources\\Imagenes\\Pikachu.gif"))));
+        pkmalos.add( new Pokemon ("Tyranitar",100, 100,45,0,new Image(new FileInputStream(".\\src\\main\\resources\\Imagenes\\Tyranitar.gif"))));
+        pkmalos.add( new Pokemon ("Mr. Mine",100, 100,60,0,new Image(new FileInputStream(".\\src\\main\\resources\\Imagenes\\Mr._Mime.gif"))));
+    }
+    /*
         pkmalos.add( new Pokemon ("Rayquaza",100, 100, 30,0,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/7/78/latest/20140111185443/Rayquaza_XY.gif")));
         pkmalos.add( new Pokemon ("Pikachu",100, 100,95,0,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/7/74/latest/20200104060734/Pikachu_EpEc.gif/111px-Pikachu_EpEc.gif")));
         pkmalos.add( new Pokemon ("Tyranitar",100, 100,45,0,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/5/5d/latest/20200105034804/Tyranitar_EpEc.gif/88px-Tyranitar_EpEc.gif")));
         pkmalos.add( new Pokemon ("Mr. Mine",100, 100,60,0,new Image("https://images.wikidexcdn.net/mwuploads/wikidex/thumb/3/39/latest/20200104030503/Mr._Mime_EpEc.gif/120px-Mr._Mime_EpEc.gif")));
-    }
+     */
 
     @FXML
     private void click1(){
@@ -301,14 +385,16 @@ public class HelloController {
     }
 
     @FXML
-    public void clickboton(){boton1.setVisible(true);}
+    public void clickboton(){
+        boton1.setVisible(true);
+        botonpokedex.setVisible(true);
+    }
 
     @FXML
-    public void actualizarvida(Pokemon pokemon){
+    public void actualizarvida(Pokemon pokemon) throws FileNotFoundException {
         selec.setVidaActual(pokemon.getVidaActual());
         initialize();
     }
-
 
 
     @FXML
@@ -362,6 +448,28 @@ public class HelloController {
             v3.actualizarbarras();
 
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void abrirPokedex(){
+        try {
+
+            Stage stage4 = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Ventana4.fxml"));
+
+            AnchorPane root =  loader.load();
+            Scene scene = new Scene(root, 550, 200);
+
+            stage4.setTitle("INFO");
+            stage4.setScene(scene);
+            stage4.show();
+            stage4.setResizable(false);
+
+            Pokedex v4 = loader.getController();
+            v4.pasarpkelegido(selec);
+
+        }catch (IOException e){
             e.printStackTrace();
         }
     }
