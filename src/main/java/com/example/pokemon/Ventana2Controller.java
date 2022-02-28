@@ -201,7 +201,7 @@ public class Ventana2Controller {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Fin del Combate");
             alert.setHeaderText("¡Has perdido!");
-            alert.setContentText("Enhorabuena " + nombremalo.getText());
+            alert.setContentText("Enhorabuena " + nombremalo.getText()+"\n ¿Quieres continuar?");
             alert.setGraphic(fotomalo);
 
             Optional<ButtonType> resultado = alert.showAndWait();
