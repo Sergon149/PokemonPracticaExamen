@@ -119,6 +119,8 @@ public class HelloController {
     Button boton1;
     @FXML
     Button botonpokedex;
+    @FXML
+    Button mochila;
 
     Pokemon selec = null;
 
@@ -388,6 +390,7 @@ public class HelloController {
     public void clickboton(){
         boton1.setVisible(true);
         botonpokedex.setVisible(true);
+        mochila.setVisible(true);
     }
 
     @FXML
@@ -474,8 +477,23 @@ public class HelloController {
         }
     }
 
+    public void abrirmochila() throws IOException {
+        Stage stage5 = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Ventana5.fxml"));
+
+        AnchorPane root =  loader.load();
+        Scene scene = new Scene(root, 300, 550);
+
+        stage5.setTitle("MOCHILA");
+        stage5.setScene(scene);
+        stage5.show();
+        stage5.setResizable(false);
+
+        Mochila v5 = loader.getController();
+        v5.pasarpkmochila(selec);
+    }
+
     public void actualizarStats1(){
-        System.out.println("he llegado a hC");
         if (stats != null)
             stats.actualizarquesito();
     }

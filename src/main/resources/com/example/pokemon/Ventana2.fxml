@@ -7,7 +7,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokemon.Ventana2Controller">
    <center>
-      <AnchorPane fx:id="anchor1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url('https://static.wikia.nocookie.net/espokemon/images/e/e4/Campo_de_batalla_DPPt_2.png/revision/latest?cb=20090424143324'); -fx-background-size: 100% 100%;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="anchor1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url('/Imagenes/batalla.png'); -fx-background-size: 100% 100%;" BorderPane.alignment="CENTER">
          <children>
             <Pane fx:id="cajamalo" layoutX="208.0" layoutY="37.0" prefHeight="61.0" prefWidth="206.0" style="-fx-border-width: 3; -fx-border-color: #000000; -fx-border-radius: 8; -fx-background-color: #44DBD6; -fx-background-radius: 8;">
                <children>

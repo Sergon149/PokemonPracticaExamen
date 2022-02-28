@@ -166,6 +166,7 @@
                </font></Label>
             <Button layoutX="237.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#pasargraficas" prefHeight="21.0" prefWidth="94.0" text="Estadisticas" visible="false" />
             <Button fx:id="botonpokedex" layoutX="407.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#abrirPokedex" text="Pokedex" visible="false" />
+            <Button fx:id="mochila" layoutX="232.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#abrirmochila" text="Mochila" visible="false" />
          </children></AnchorPane>
    </bottom>
 </BorderPane>

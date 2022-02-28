@@ -179,6 +179,7 @@ public class Ventana2Controller {
 
     }
 
+
     @FXML
     public void showAlert() {
         if (barramalo.getProgress() <= 0) {
