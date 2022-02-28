@@ -126,6 +126,10 @@ public class HelloController {
 
     public HelloController() throws FileNotFoundException {
     }
+    Ventana2Controller ventana2;
+    public void recibecontrolador(Ventana2Controller ventana2){
+        this.ventana2=ventana2;
+    }
 
 
     @FXML
@@ -448,6 +452,7 @@ public class HelloController {
 
             Estadisticas v3 = loader.getController();
             v3.actualizarquesito();
+            v3.pasarcon(this);
             v3.actualizarbarras();
 
         } catch (IOException e) {
@@ -490,6 +495,7 @@ public class HelloController {
         stage5.setResizable(false);
 
         Mochila v5 = loader.getController();
+        v5.pasarmierda(this);
         v5.pasarpkmochila(selec);
     }
 

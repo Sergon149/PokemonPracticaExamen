@@ -24,10 +24,24 @@ public class Mochila {
     @FXML
     Label vida;
     @FXML
+    Label uno;
+    @FXML
+    Label dos;
+    @FXML
+    Label tres;
+    @FXML
     ProgressBar bar;
 
+    Pokemon pokemon=null;
+    private HelloController ventana1;
+
+    public void pasarmierda(HelloController ventana1){
+        this.ventana1=ventana1;
+    }
 
     public void pasarpkmochila(Pokemon pokemon) throws FileNotFoundException {
+
+        this.pokemon=pokemon;
 
         imagen.setImage(pokemon.imagen);
         mochila1.setImage(new Image(new FileInputStream(".\\src\\main\\resources\\Imagenes\\estrella.png")));
@@ -47,6 +61,53 @@ public class Mochila {
         }
         if (bar.getProgress() > 0.50){
             bar.setStyle("-fx-accent:  #94ED30;");
+        }
+
+        if (pokemon.vidaActual <= 0){
+            mochila2.setVisible(false);
+            mochila3.setVisible(false);
+        }else{
+            mochila1.setVisible(false);
+        }
+    }
+
+    public void moch1() throws FileNotFoundException {
+        if (pokemon.vidaActual <= 0){
+            pokemon.vidaActual=pokemon.vidaTotal;
+            vida.setText(pokemon.vidaActual+"/"+pokemon.vidaTotal);
+
+            double salida = (double) pokemon.getVidaActual()/pokemon.getVidaTotal();
+            bar.setProgress(salida);
+
+            ventana1.actualizarvida(pokemon);
+
+            ventana1.ventana2.actualizarvidamochila(pokemon);
+        }
+    }
+    public void moch2() throws FileNotFoundException {
+        if (pokemon.vidaActual > 0){
+            pokemon.vidaActual+=20;
+            vida.setText(pokemon.vidaActual+"/"+pokemon.vidaTotal);
+
+            double salida = (double) pokemon.getVidaActual()/pokemon.getVidaTotal();
+            bar.setProgress(salida);
+
+            ventana1.actualizarvida(pokemon);
+
+            ventana1.ventana2.actualizarvidamochila(pokemon);
+        }
+    }
+    public void moch3() throws FileNotFoundException {
+        if (pokemon.vidaActual > 0){
+            pokemon.vidaActual+=40;
+            vida.setText(pokemon.vidaActual+"/"+pokemon.vidaTotal);
+
+            double salida = (double) pokemon.getVidaActual()/pokemon.getVidaTotal();
+            bar.setProgress(salida);
+
+            ventana1.actualizarvida(pokemon);
+
+            ventana1.ventana2.actualizarvidamochila(pokemon);
         }
     }
 

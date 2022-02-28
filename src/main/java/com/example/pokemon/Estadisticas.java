@@ -15,6 +15,10 @@ public class Estadisticas {
 
       HelloController ventana1;
 
+    public void pasarcon(HelloController ventana1){
+        this.ventana1=ventana1;
+    }
+
     public void actualizarquesito() {
 
         quesito.setTitle("Daño entre Pokemons");

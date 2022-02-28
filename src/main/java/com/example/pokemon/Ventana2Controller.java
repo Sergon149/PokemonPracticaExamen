@@ -68,7 +68,11 @@ public class Ventana2Controller {
 
     public void pasarvida(HelloController ventana1){
         this.ventana1=ventana1;
+
+        ventana1.recibecontrolador(this);
     }
+
+
 
 
     public void initialize() {
@@ -177,6 +181,16 @@ public class Ventana2Controller {
         }
         ventana1.actualizarStats1();
 
+    }
+
+
+    public void actualizarvidamochila(Pokemon pokemon) throws FileNotFoundException {
+        psbueno.setText(String.valueOf(pokemon.vidaActual));
+
+        double salida = (double) pokemon.getVidaActual()/pokemon.getVidaTotal();
+        barrabueno.setProgress(salida);
+
+        ventana1.actualizarvida(pokemon);
     }
 
 

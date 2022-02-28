@@ -7,14 +7,14 @@
 <AnchorPane prefHeight="550.0" prefWidth="300.0" style="-fx-background-image: url('/Imagenes/mochila.jpg'); -fx-background-size: 100% 100%;" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokemon.Mochila">
    <children>
       <ImageView fx:id="imagen" fitHeight="150.0" fitWidth="200.0" layoutX="94.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="nombre" layoutX="136.0" layoutY="320.0" text="Label" />
-      <ProgressBar fx:id="bar" layoutX="50.0" layoutY="348.0" prefWidth="200.0" progress="0.0" />
-      <Label fx:id="vida" layoutX="136.0" layoutY="375.0" text="Label" />
-      <ImageView fx:id="mochila1" fitHeight="67.0" fitWidth="68.0" layoutX="16.0" layoutY="470.0" onMouseClicked="#mochila1" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="mochila3" fitHeight="67.0" fitWidth="68.0" layoutX="216.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="mochila2" fitHeight="67.0" fitWidth="68.0" layoutX="116.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="36.0" layoutY="445.0" text="Label" />
-      <Label layoutX="136.0" layoutY="445.0" text="Label" />
-      <Label layoutX="236.0" layoutY="445.0" text="Label" />
+      <Label fx:id="nombre" layoutX="136.0" layoutY="362.0" text="Label" />
+      <ProgressBar fx:id="bar" layoutX="50.0" layoutY="387.0" prefWidth="200.0" progress="0.0" />
+      <Label fx:id="vida" layoutX="136.0" layoutY="412.0" text="Label" />
+      <ImageView fx:id="mochila1" fitHeight="67.0" fitWidth="68.0" layoutX="16.0" layoutY="470.0" onMouseClicked="#moch1" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="mochila3" fitHeight="67.0" fitWidth="68.0" layoutX="216.0" layoutY="470.0" onMouseClicked="#moch3" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="mochila2" fitHeight="67.0" fitWidth="68.0" layoutX="116.0" layoutY="470.0" onMouseClicked="#moch2" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="uno" layoutX="36.0" layoutY="445.0" text="Revivir" />
+      <Label fx:id="dos" layoutX="122.0" layoutY="445.0" text="Curacion 1" />
+      <Label fx:id="tres" layoutX="222.0" layoutY="445.0" text="Curacion 2" />
    </children>
 </AnchorPane>
